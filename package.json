@@ -1,0 +1,24 @@
+{
+  "name": "raccoonflowers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilya-soloveyv/raccoonflowers.git"
+  },
+  "author": "ilya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ilya-soloveyv/raccoonflowers/issues"
+  },
+  "homepage": "https://github.com/ilya-soloveyv/raccoonflowers#readme",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "pug": "^2.0.3"
+  }
+}
