@@ -13,7 +13,7 @@ app.use(express.static('public'))
 
 app.all('*', (req, res, next) => {
     if (req.headers.host.match(/^www/) !== null ) {
-        res.redirect('http://' + req.headers.host.replace(/^www\./, '') + req.url)
+        res.redirect(301, 'http://' + req.headers.host.replace(/^www\./, '') + req.url)
     } else {
         next()
     }
