@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
     })
 })
 
-if (process.env.NODE_ENV == 'development') {
+if (process.env.NODE_ENV != 'development') {
     const https = require('https').createServer({
         key: fs.readFileSync('encryption/private.key'),
         cert: fs.readFileSync( 'encryption/intermediate.csr' ),
