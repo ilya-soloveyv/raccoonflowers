@@ -1,7 +1,20 @@
+const fs = require('fs')
+
+var key = fs.readFileSync('encryption/private.key');
+var cert = fs.readFileSync( 'encryption/raccoonflowers.com.csr' );
+var ca = fs.readFileSync( 'encryption/intermediate.csr' );
+var options = {
+    key: key,
+    cert: ca,
+    ca: cert
+}
+
 const express = require('express')
 const app = express()
 const http = require('http').createServer(app)
+// const https = require('https').createServer(options, app)
 const bodyParser = require('body-parser')
+
 const pug = require('pug')
 require('dotenv').config()
 
@@ -25,6 +38,9 @@ app.get('/', (req, res) => {
     })
 })
 
-http.listen(process.env.PORT, process.env.DNS, () => {
-    console.log("Server is running...")
-})
+var https = require('https');
+https.createServer(options, app).listen(443);
+// https.listen(443);
+// http.listen(process.env.PORT, process.env.DNS, () => {
+    // console.log("Server is running...")
+// })
