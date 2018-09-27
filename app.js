@@ -21,14 +21,19 @@ require('dotenv').config()
 app.set('view engine', 'pug')
 
 app.use(function(req, res, next) {
+    var host = req.headers.host
+    if (host.match(/^www/) !== null) {
+        host = host.replace(/^www\./, '')
+        res.redirect(301, 'http://' + host + req.url)
+    }
     if (req.secure) {
         next();
     } else {
-        var host = req.headers.host;
-        if (host.match(/^www/) !== null) {
-            host = host.replace(/^www\./, '')
-        }
-        res.redirect('https://' + host + req.url);
+        // var host = req.headers.host;
+        // if (host.match(/^www/) !== null) {
+            // host = host.replace(/^www\./, '')
+        // }
+        res.redirect(301, 'https://' + host + req.url);
     }
 })
 
@@ -36,13 +41,13 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(express.static('public'))
 
-app.all('*', (req, res, next) => {
-    if (req.headers.host.match(/^www/) !== null ) {
-        res.redirect(301, 'http://' + req.headers.host.replace(/^www\./, '') + req.url)
-    } else {
-        next()
-    }
-})
+// app.all('*', (req, res, next) => {
+//     if (req.headers.host.match(/^www/) !== null ) {
+//         res.redirect(301, 'http://' + req.headers.host.replace(/^www\./, '') + req.url)
+//     } else {
+//         next()
+//     }
+// })
 
 app.get('/', (req, res) => {
     res.render('welcome', {
