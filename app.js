@@ -8,13 +8,6 @@ require('dotenv').config()
 
 app.set('view engine', 'pug')
 
-app.use(function(req, res, next) {
-    if (req.secure) {
-        next();
-    } else {
-        res.redirect(301, 'https://' + req.headers.host + req.url);
-    }
-})
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(express.static('public'))
@@ -34,6 +27,13 @@ app.get('/', (req, res) => {
 })
 
 if (process.env.NODE_ENV != 'development') {
+    app.use(function(req, res, next) {
+        if (req.secure) {
+            next()
+        } else {
+            res.redirect(301, 'https://' + req.headers.host + req.url)
+        }
+    })
     const https = require('https').createServer({
         key: fs.readFileSync('encryption/private.key'),
         cert: fs.readFileSync( 'encryption/intermediate.csr' ),
