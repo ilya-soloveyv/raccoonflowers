@@ -24,7 +24,11 @@ app.use(function(req, res, next) {
     if (req.secure) {
         next();
     } else {
-        res.redirect('https://' + req.headers.host + req.url);
+        var host = req.headers.host;
+        if (host.match(/^www/) !== null) {
+            host = host.replace(/^www\./, '')
+        }
+        res.redirect('https://' + host + req.url);
     }
 })
 
