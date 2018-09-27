@@ -20,6 +20,14 @@ require('dotenv').config()
 
 app.set('view engine', 'pug')
 
+app.use(function(req, res, next) {
+    if (req.secure) {
+        next();
+    } else {
+        res.redirect('https://' + req.headers.host + req.url);
+    }
+})
+
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(express.static('public'))
@@ -40,6 +48,8 @@ app.get('/', (req, res) => {
 
 var https = require('https');
 https.createServer(options, app).listen(443);
+
+http.listen(80);
 // https.listen(443);
 // http.listen(process.env.PORT, process.env.DNS, () => {
     // console.log("Server is running...")
