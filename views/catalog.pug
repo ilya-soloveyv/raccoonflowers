@@ -1,0 +1,9 @@
+extends app
+
+block main
+    h1 This is catalog
+
+    ul
+        each item in catalog
+            li
+                a(href="/catalog/"+item.uri) #{item.name} - #{item.price}

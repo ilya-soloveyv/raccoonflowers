@@ -29,10 +29,61 @@ app.all('*', (req, res, next) => {
     }
 })
 
+
+
+
+var catalog = [
+    {
+        name: 'Цветок 1',
+        uri: 'flower1',
+        price: 3000
+    },
+    {
+        name: 'Цветок 2',
+        uri: 'flower2',
+        price: 3500
+    },
+    {
+        name: 'Цветок 3',
+        uri: 'flower3',
+        price: 5000
+    }
+]
+
+
+
+
 app.get('/', (req, res) => {
+    console.log(req.body)
     res.render('welcome', {
         title: 'Raccoon Flowers'
     })
+})
+
+app.get('/catalog', (req, res) => {
+    res.render('catalog', {
+        title: 'Каталог',
+        catalog: catalog
+    })
+})
+
+app.get('/catalog/:uri', (req, res) => {
+
+    for (let item of catalog) {
+        if (item.uri == req.params.uri) {
+            return res.render('product', {
+                title: item.name,
+                product: item
+            })
+        }
+    }
+
+    // arr.find(k => k=='b');
+
+    // res.render("product", {
+        // title: ,
+        // product: 
+    // })
 })
 
 if (process.env.NODE_ENV != 'development') {
