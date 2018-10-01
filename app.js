@@ -20,6 +20,9 @@ if (process.env.NODE_ENV != 'development') {
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(express.static('public'))
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist'))
+app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist'))
+app.use('/popper', express.static(__dirname + '/node_modules/popper.js/dist/umd'))
 
 app.all('*', (req, res, next) => {
     if (req.headers.host.match(/^www/) !== null ) {
@@ -54,7 +57,6 @@ var catalog = [
 
 
 app.get('/', (req, res) => {
-    console.log(req.body)
     res.render('welcome', {
         title: 'Raccoon Flowers'
     })
@@ -68,7 +70,6 @@ app.get('/catalog', (req, res) => {
 })
 
 app.get('/catalog/:uri', (req, res) => {
-
     for (let item of catalog) {
         if (item.uri == req.params.uri) {
             return res.render('product', {
@@ -77,13 +78,6 @@ app.get('/catalog/:uri', (req, res) => {
             })
         }
     }
-
-    // arr.find(k => k=='b');
-
-    // res.render("product", {
-        // title: ,
-        // product: 
-    // })
 })
 
 if (process.env.NODE_ENV != 'development') {
@@ -94,5 +88,4 @@ if (process.env.NODE_ENV != 'development') {
     }, app)
     https.listen(443)
 }
-
 http.listen(process.env.PORT, process.env.DNS, () => { console.log("Server is running...") })

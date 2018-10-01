@@ -4,6 +4,22 @@ html(lang="ru")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
         title= title
+        link(rel="stylesheet", href="/bootstrap/css/bootstrap.min.css")
     body
 
-    block main
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light
+            .container
+                a.navbar-brand(href="/") Raccoon Flowers
+                button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarSupportedContent", aria-controls="navbarSupportedContent", aria-expanded="false", aria-label="Toggle navigation")
+                    span.navbar-toggler-icon
+                div#navbarSupportedContent.collapse.navbar-collapse
+                    ul.navbar-nav.mr-auto
+                        li.nav-item
+                            a.nav-link(href="/catalog") Каталог
+        block main
+
+
+
+        script(src="/jquery/jquery.min.js")
+        script(src="/popper/popper.min.js")
+        script(src="/bootstrap/js/bootstrap.min.js")
