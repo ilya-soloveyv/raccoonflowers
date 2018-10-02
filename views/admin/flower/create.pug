@@ -1,0 +1,16 @@
+extends ../app
+
+block main
+    nav(aria-label="breadcrumb")
+        ol.breadcrumb
+            li.breadcrumb-item
+                a(href="/admin/flower") Цветы
+            li.breadcrumb-item.active(aria-current="page") Добавление цветка
+    .container-fluid
+        .row
+            .col-lg-4
+                form(action="", method="POST")
+                    .form-group
+                        label(for="exampleInputEmail1") Название цветка
+                        input#title.form-control(type="text", name="title")
+                    button.btn.btn-success(type="submit") Сохранение

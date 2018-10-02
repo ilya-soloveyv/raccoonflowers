@@ -1,0 +1,26 @@
+extends ../app
+
+block main
+    nav(aria-label="breadcrumb")
+        ol.breadcrumb
+            li.breadcrumb-item
+                a(href="/admin/flower") Цветы
+            li.breadcrumb-item.active(aria-current="page")
+                if flower
+                    | #{flower.title}
+                else
+                    | Новый цветок
+    .container-fluid
+        .row
+            .col-lg-4
+                form(action="/admin/flower/update", method="POST")
+                    if flower
+                        input(type="hidden", name="id", value=flower._id)
+                    .form-group
+                        label(for="exampleInputEmail1") Название цветка
+                        if flower
+                            - var title = flower.title
+                        else
+                            - var title = null
+                        input#title.form-control(type="text", name="title", value= title)
+                    button.btn.btn-success(type="submit") Сохранение

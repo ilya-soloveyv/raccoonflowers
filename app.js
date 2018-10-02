@@ -2,11 +2,20 @@ const express = require('express')
 const app = express()
 const http = require('http').createServer(app)
 const bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
+const mongoose = require('mongoose')
+const keys = require('./config/keys')
 const fs = require('fs')
 const pug = require('pug')
 require('dotenv').config()
 
+const Flower = require('./models/flower.model')
+
 app.set('view engine', 'pug')
+
+const adminRoutes = require('./routes/admin.routes')
+app.use('/admin', adminRoutes)
 
 if (process.env.NODE_ENV != 'development') {
     app.use(function(req, res, next) {
@@ -17,8 +26,6 @@ if (process.env.NODE_ENV != 'development') {
         }
     })
 }
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json())
 app.use(express.static('public'))
 app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist'))
 app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist'))
@@ -80,12 +87,23 @@ app.get('/catalog/:uri', (req, res) => {
     }
 })
 
-if (process.env.NODE_ENV != 'development') {
-    const https = require('https').createServer({
-        key: fs.readFileSync('encryption/private.key'),
-        cert: fs.readFileSync( 'encryption/intermediate.csr' ),
-        ca: fs.readFileSync( 'encryption/raccoonflowers.com.csr' )
-    }, app)
-    https.listen(443)
-}
-http.listen(process.env.PORT, process.env.DNS, () => { console.log("Server is running...") })
+
+
+
+
+
+
+
+
+mongoose.connect(keys.mongodb.dbURI, { useNewUrlParser: true }, () => {
+    console.log('Connected to mongodb')
+    if (process.env.NODE_ENV != 'development') {
+        const https = require('https').createServer({
+            key: fs.readFileSync('encryption/private.key'),
+            cert: fs.readFileSync( 'encryption/intermediate.csr' ),
+            ca: fs.readFileSync( 'encryption/raccoonflowers.com.csr' )
+        }, app)
+        https.listen(443)
+    }
+    http.listen(process.env.PORT, process.env.DNS, () => { console.log("Server is running...") })
+})
