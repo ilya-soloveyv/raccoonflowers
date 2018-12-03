@@ -14,7 +14,16 @@ html(lang="ru")
             div#navbarSupportedContent.collapse.navbar-collapse
                 ul.navbar-nav.mr-auto
                     li.nav-item
-                        a.nav-link(href="/admin/flower") Цветы
+                        a.nav-link(href="/admin/bouquet") Букеты
+                    li.nav-item
+                        a.nav-link(href="/admin/order") Заказы
+                    li.nav-item.dropdown
+                        a.nav-link.dropdown-toggle(href="#", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") Справочник
+                        .dropdown-menu(aria-labelledby="navbarDropdown")
+                            a.dropdown-item(href="/admin/flower") Цветы
+                            a.dropdown-item(href="/admin/color") Цветовая гамма
+                            a.dropdown-item(href="/admin/size") Размеры
+                            a.dropdown-item(href="/admin/packaging") Упаковка
         block main
 
 

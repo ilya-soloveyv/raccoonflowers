@@ -2,18 +2,18 @@ const mongoose = require('mongoose')
 const mongoosePaginate = require('mongoose-paginate')
 const Schema = mongoose.Schema
 
-const bouquetSchema = new Schema({
+const colorSchema = new Schema({
     title: {
         type: String,
         required: true
     }
 })
-bouquetSchema.plugin(mongoosePaginate)
-const Bouquet = mongoose.model('bouquet', bouquetSchema)
+colorSchema.plugin(mongoosePaginate)
+const Color = mongoose.model('color', colorSchema)
 
 
 
-module.exports = Bouquet
+module.exports = Color
 
 module.exports.createFlower = (color, cb) => {
     user.save(cb)

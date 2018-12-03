@@ -1,11 +1,7 @@
 const router = require('express').Router()
-const Flower = require('../models/flower.model')
+const Flower = require('../../models/flower.model')
 
 router.get('/', (req, res) => {
-    res.redirect('/admin/flower')
-})
-router.get('/flower', (req, res) => {
-    // console.log(req.query.p)
     Flower.paginate({}, { page: (req.query.p) ? req.query.p : 1, limit: 3 }, function(err, flowers) {
         console.log(flowers)
         res.render('admin/flower/flower', {
@@ -14,24 +10,11 @@ router.get('/flower', (req, res) => {
     })
 })
 
-router.get('/flower/create', (req, res) => {
+router.get('/create', (req, res) => {
     res.render('admin/flower/item')
 })
 
-router.get('/flower/:id', (req, res) => {
-    Flower.where({ _id: req.params.id }).findOne((err, flower) => {
-        if (err) return handleError(err)
-        console.log(flower)
-        if (flower) {
-            return res.render('admin/flower/item', {
-                flower: flower
-            })
-        }
-        res.send('Не найдено')
-    })
-})
-
-router.post('/flower/update', (req, res) => {
+router.post('/update', (req, res) => {
     if (req.body.id) {
         Flower.findOneAndUpdate({ _id: req.body.id }, { $set: { title: req.body.title }}, (err, flower) => {
             if (err) return handleError(err)
@@ -43,6 +26,19 @@ router.post('/flower/update', (req, res) => {
             res.redirect('/admin/flower/' + flower._id)
         })    
     }
+})
+
+router.get('/:id', (req, res) => {
+    Flower.where({ _id: req.params.id }).findOne((err, flower) => {
+        if (err) return handleError(err)
+        console.log(flower)
+        if (flower) {
+            return res.render('admin/flower/item', {
+                flower: flower
+            })
+        }
+        res.send('Не найдено')
+    })
 })
 
 module.exports = router;

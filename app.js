@@ -14,8 +14,18 @@ const Flower = require('./models/flower.model')
 
 app.set('view engine', 'pug')
 
-const adminRoutes = require('./routes/admin.routes')
-app.use('/admin', adminRoutes)
+const adminRouter = require('./routes/admin/admin.routes')
+app.use('/admin', adminRouter)
+
+const adminBouquetRouter = require('./routes/admin/bouquet.routes')
+app.use('/admin/bouquet', adminBouquetRouter)
+
+const adminColorRouter = require('./routes/admin/color.routes')
+app.use('/admin/color', adminColorRouter)
+
+const adminFlowerRouter = require('./routes/admin/flower.routes')
+app.use('/admin/flower', adminFlowerRouter)
+
 
 if (process.env.NODE_ENV != 'development') {
     app.use(function(req, res, next) {
@@ -41,28 +51,6 @@ app.all('*', (req, res, next) => {
 
 
 
-
-var catalog = [
-    {
-        name: 'Цветок 1',
-        uri: 'flower1',
-        price: 3000
-    },
-    {
-        name: 'Цветок 2',
-        uri: 'flower2',
-        price: 3500
-    },
-    {
-        name: 'Цветок 3',
-        uri: 'flower3',
-        price: 5000
-    }
-]
-
-
-
-
 app.get('/', (req, res) => {
     res.render('welcome', {
         title: 'Raccoon Flowers'
@@ -70,21 +58,21 @@ app.get('/', (req, res) => {
 })
 
 app.get('/catalog', (req, res) => {
-    res.render('catalog', {
-        title: 'Каталог',
-        catalog: catalog
+    Flower.paginate({}, { page: (req.query.p) ? req.query.p : 1, limit: 3 }, function(err, flowers) {
+        res.render('catalog', {
+            title: 'Каталог',
+            flowers: flowers
+        })
     })
 })
 
 app.get('/catalog/:uri', (req, res) => {
-    for (let item of catalog) {
-        if (item.uri == req.params.uri) {
-            return res.render('product', {
-                title: item.name,
-                product: item
-            })
-        }
-    }
+    Flower.findOne({ _id: req.params.uri }, function(err, flower) {
+        return res.render('product', {
+            title: 'Цветок ' + flower.title,
+            flower: flower
+        })
+    })
 })
 
 

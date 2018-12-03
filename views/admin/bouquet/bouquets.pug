@@ -1,0 +1,28 @@
+extends ../app
+
+block main
+    nav(aria-label="breadcrumb")
+        ol.breadcrumb
+            li.breadcrumb-item.active(aria-current="page") Букеты
+    .container-fluid
+        table.table
+            thead
+                tr
+                    th Название
+            tbody
+                each bouquet in bouquets.docs
+                    tr
+                        td
+                            a(href="/admin/bouquet/" + bouquet.id)= bouquet.title
+        nav(aria-label="Page navigation example")
+            ul.pagination
+                - var n = 1;
+                while n <= bouquets.pages
+                    if bouquets.page == n
+                        - var li_class = "page-item active"
+                    else
+                        - var li_class = "page-item"
+                    li(class= li_class)
+                        a.page-link(href="/admin/bouquet?p=" + n)= n
+                    - n++
+        a.btn.btn-primary(href="/admin/bouquet/create") Добавить букет

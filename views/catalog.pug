@@ -4,6 +4,6 @@ block main
     .container
         h1 Каталог
         ul
-            each item in catalog
+            each flower in flowers.docs
                 li
-                    a(href="/catalog/"+item.uri) #{item.name} - #{item.price}
+                    a(href="/catalog/"+flower.id) #{flower.title}
