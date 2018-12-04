@@ -1,0 +1,29 @@
+extends ../app
+
+block main
+    nav(aria-label="breadcrumb")
+        ol.breadcrumb
+            li.breadcrumb-item.active(aria-current="page") Размеры
+    .container-fluid
+        table.table
+            thead
+                tr
+                    th Название
+            tbody
+                each size in sizes.docs
+                    tr
+                        td
+                            a(href="/admin/size/" + size.id)= size.title
+        if sizes.pages > 1
+            nav(aria-label="Page navigation example")
+                ul.pagination
+                    - var n = 1;
+                    while n <= sizes.pages
+                        if sizes.page == n
+                            - var li_class = "page-item active"
+                        else
+                            - var li_class = "page-item"
+                        li(class= li_class)
+                            a.page-link(href="/admin/size?p=" + n)= n
+                        - n++
+        a.btn.btn-primary(href="/admin/size/create") Добавить размер

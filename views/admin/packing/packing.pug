@@ -1,0 +1,26 @@
+extends ../app
+
+block main
+    nav(aria-label="breadcrumb")
+        ol.breadcrumb
+            li.breadcrumb-item
+                a(href="/admin/packing") Упаковки
+            li.breadcrumb-item.active(aria-current="page")
+                if packing
+                    | #{packing.title}
+                else
+                    | Новая упаковка
+    .container-fluid
+        .row
+            .col-lg-4
+                form(action="/admin/packing/update", method="POST")
+                    if packing
+                        input(type="hidden", name="id", value=packing._id)
+                    .form-group
+                        label(for="exampleInputEmail1") Название упаковки
+                        if packing
+                            - var title = packing.title
+                        else
+                            - var title = null
+                        input#title.form-control(type="text", name="title", value= title)
+                    button.btn.btn-success(type="submit") Сохранение

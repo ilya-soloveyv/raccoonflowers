@@ -1,0 +1,29 @@
+extends ../app
+
+block main
+    nav(aria-label="breadcrumb")
+        ol.breadcrumb
+            li.breadcrumb-item.active(aria-current="page") Упаковки
+    .container-fluid
+        table.table
+            thead
+                tr
+                    th Название
+            tbody
+                each packing in packings.docs
+                    tr
+                        td
+                            a(href="/admin/packing/" + packing.id)= packing.title
+        if packings.pages > 1
+            nav(aria-label="Page navigation example")
+                ul.pagination
+                    - var n = 1;
+                    while n <= packings.pages
+                        if packings.page == n
+                            - var li_class = "page-item active"
+                        else
+                            - var li_class = "page-item"
+                        li(class= li_class)
+                            a.page-link(href="/admin/packing?p=" + n)= n
+                        - n++
+        a.btn.btn-primary(href="/admin/packing/create") Добавить упаковку

@@ -1,0 +1,29 @@
+extends ../app
+
+block main
+    nav(aria-label="breadcrumb")
+        ol.breadcrumb
+            li.breadcrumb-item.active(aria-current="page") Цветовая схема
+    .container-fluid
+        table.table
+            thead
+                tr
+                    th Название
+            tbody
+                each color in colors.docs
+                    tr
+                        td
+                            a(href="/admin/color/" + color.id)= color.title
+        if colors.pages > 1
+            nav(aria-label="Page navigation example")
+                ul.pagination
+                    - var n = 1;
+                    while n <= colors.pages
+                        if colors.page == n
+                            - var li_class = "page-item active"
+                        else
+                            - var li_class = "page-item"
+                        li(class= li_class)
+                            a.page-link(href="/admin/color?p=" + n)= n
+                        - n++
+        a.btn.btn-primary(href="/admin/color/create") Добавить цвет

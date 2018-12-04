@@ -3,26 +3,24 @@ extends ../app
 block main
     nav(aria-label="breadcrumb")
         ol.breadcrumb
-            li.breadcrumb-item.active(aria-current="page") Цветы
+            li.breadcrumb-item
+                a(href="/admin/flower") Цветы
+            li.breadcrumb-item.active(aria-current="page")
+                if flower
+                    | #{flower.title}
+                else
+                    | Новый цветок
     .container-fluid
-        table.table
-            thead
-                tr
-                    th Название
-            tbody
-                each flower in flowers.docs
-                    tr
-                        td
-                            a(href="/admin/flower/" + flower.id)= flower.title
-        nav(aria-label="Page navigation example")
-            ul.pagination
-                - var n = 1;
-                while n <= flowers.pages
-                    if flowers.page == n
-                        - var li_class = "page-item active"
-                    else
-                        - var li_class = "page-item"
-                    li(class= li_class)
-                        a.page-link(href="/admin/flower?p=" + n)= n
-                    - n++
-        a.btn.btn-primary(href="/admin/flower/create") Добавить цветок
+        .row
+            .col-lg-4
+                form(action="/admin/flower/update", method="POST")
+                    if flower
+                        input(type="hidden", name="id", value=flower._id)
+                    .form-group
+                        label(for="exampleInputEmail1") Название цветка
+                        if flower
+                            - var title = flower.title
+                        else
+                            - var title = null
+                        input#title.form-control(type="text", name="title", value= title)
+                    button.btn.btn-success(type="submit") Сохранение

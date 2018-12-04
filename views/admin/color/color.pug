@@ -3,26 +3,24 @@ extends ../app
 block main
     nav(aria-label="breadcrumb")
         ol.breadcrumb
-            li.breadcrumb-item.active(aria-current="page") Цветовая схема
+            li.breadcrumb-item
+                a(href="/admin/color") Цветовая схема
+            li.breadcrumb-item.active(aria-current="page")
+                if color
+                    | #{color.title}
+                else
+                    | Новая цветовая схема
     .container-fluid
-        table.table
-            thead
-                tr
-                    th Название
-            tbody
-                each color in colors.docs
-                    tr
-                        td
-                            a(href="/admin/color/" + color.id)= color.title
-        nav(aria-label="Page navigation example")
-            ul.pagination
-                - var n = 1;
-                while n <= colors.pages
-                    if colors.page == n
-                        - var li_class = "page-item active"
-                    else
-                        - var li_class = "page-item"
-                    li(class= li_class)
-                        a.page-link(href="/admin/color?p=" + n)= n
-                    - n++
-        a.btn.btn-primary(href="/admin/color/create") Добавить цвет
+        .row
+            .col-lg-4
+                form(action="/admin/color/update", method="POST")
+                    if color
+                        input(type="hidden", name="id", value=color._id)
+                    .form-group
+                        label(for="exampleInputEmail1") Название цветовой схемы
+                        if color
+                            - var title = color.title
+                        else
+                            - var title = null
+                        input#title.form-control(type="text", name="title", value= title)
+                    button.btn.btn-success(type="submit") Сохранение

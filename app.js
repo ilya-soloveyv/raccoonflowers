@@ -26,6 +26,12 @@ app.use('/admin/color', adminColorRouter)
 const adminFlowerRouter = require('./routes/admin/flower.routes')
 app.use('/admin/flower', adminFlowerRouter)
 
+const adminSizeRouter = require('./routes/admin/size.routes')
+app.use('/admin/size', adminSizeRouter)
+
+const adminPackingRouter = require('./routes/admin/packing.routes')
+app.use('/admin/packing', adminPackingRouter)
+
 
 if (process.env.NODE_ENV != 'development') {
     app.use(function(req, res, next) {

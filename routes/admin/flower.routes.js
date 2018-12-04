@@ -2,16 +2,16 @@ const router = require('express').Router()
 const Flower = require('../../models/flower.model')
 
 router.get('/', (req, res) => {
-    Flower.paginate({}, { page: (req.query.p) ? req.query.p : 1, limit: 3 }, function(err, flowers) {
+    Flower.paginate({}, { page: (req.query.p) ? req.query.p : 1, limit: 10 }, function(err, flowers) {
         console.log(flowers)
-        res.render('admin/flower/flower', {
+        res.render('admin/flower/flowers', {
             flowers: flowers
         })
     })
 })
 
 router.get('/create', (req, res) => {
-    res.render('admin/flower/item')
+    res.render('admin/flower/flower')
 })
 
 router.post('/update', (req, res) => {
@@ -29,11 +29,11 @@ router.post('/update', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-    Flower.where({ _id: req.params.id }).findOne((err, flower) => {
-        if (err) return handleError(err)
+    Flower.findOne({ _id: req.params.id }, (err, flower) => {
+        if (err) return console.log(err)
         console.log(flower)
         if (flower) {
-            return res.render('admin/flower/item', {
+            return res.render('admin/flower/flower', {
                 flower: flower
             })
         }

@@ -2,16 +2,16 @@ const router = require('express').Router()
 const Color = require('../../models/color.model')
 
 router.get('/', (req, res) => {
-    Color.paginate({}, { page: (req.query.p) ? req.query.p : 1, limit: 3 }, function(err, colors) {
+    Color.paginate({}, { page: (req.query.p) ? req.query.p : 1, limit: 10 }, function(err, colors) {
         console.log(colors)
-        res.render('admin/color/color', {
+        res.render('admin/color/colors', {
             colors: colors
         })
     })
 })
 
 router.get('/create', (req, res) => {
-    res.render('admin/color/item')
+    res.render('admin/color/color')
 })
 
 router.post('/update', (req, res) => {
@@ -33,7 +33,7 @@ router.get('/:id', (req, res) => {
         if (err) return handleError(err)
         console.log(color)
         if (color) {
-            return res.render('admin/color/item', {
+            return res.render('admin/color/color', {
                 color: color
             })
         }

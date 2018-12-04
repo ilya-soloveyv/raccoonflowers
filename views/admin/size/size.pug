@@ -4,22 +4,22 @@ block main
     nav(aria-label="breadcrumb")
         ol.breadcrumb
             li.breadcrumb-item
-                a(href="/admin/flower") Цветы
+                a(href="/admin/size") Размеры
             li.breadcrumb-item.active(aria-current="page")
-                if flower
-                    | #{flower.title}
+                if size
+                    | #{size.title}
                 else
-                    | Новый цветок
+                    | Новый размер
     .container-fluid
         .row
             .col-lg-4
-                form(action="/admin/flower/update", method="POST")
-                    if flower
-                        input(type="hidden", name="id", value=flower._id)
+                form(action="/admin/size/update", method="POST")
+                    if size
+                        input(type="hidden", name="id", value=size._id)
                     .form-group
                         label(for="exampleInputEmail1") Название цветка
-                        if flower
-                            - var title = flower.title
+                        if size
+                            - var title = size.title
                         else
                             - var title = null
                         input#title.form-control(type="text", name="title", value= title)
