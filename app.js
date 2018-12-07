@@ -8,11 +8,13 @@ const mongoose = require('mongoose')
 const keys = require('./config/keys')
 const fs = require('fs')
 const pug = require('pug')
+app.set('view engine', 'pug')
 require('dotenv').config()
+app.locals.env = process.env;
 
 const Bouquet = require('./models/bouquet.model')
 
-app.set('view engine', 'pug')
+
 
 const adminRouter = require('./routes/admin/admin.routes')
 app.use('/admin', adminRouter)
@@ -58,14 +60,14 @@ app.all('*', (req, res, next) => {
 
 
 app.get('/', (req, res) => {
-    res.render('welcome', {
+    res.render('public/welcome/welcome', {
         title: 'Raccoon Flowers'
     })
 })
 
 app.get('/catalog', (req, res) => {
     Bouquet.paginate({}, { page: (req.query.p) ? req.query.p : 1, limit: 3 }, function(err, bouquets) {
-        res.render('catalog', {
+        res.render('public/catalog/catalog', {
             title: 'Каталог',
             bouquets: bouquets
         })
@@ -74,7 +76,7 @@ app.get('/catalog', (req, res) => {
 
 app.get('/catalog/:uri', (req, res) => {
     Bouquet.where({ uri: req.params.uri }).populate('flower').findOne((err, bouquet) => {
-        return res.render('product', {
+        return res.render('public/catalog/product', {
             title: 'Букет ' + bouquet.title,
             bouquet: bouquet
         })
@@ -94,7 +96,7 @@ app.get('/catalog/:uri', (req, res) => {
 
 
 mongoose.connect(keys.mongodb.dbURI, { useNewUrlParser: true }, () => {
-    console.log('Connected to mongodb')
+    console.log('Connected to mongodb...')
     if (process.env.NODE_ENV != 'development') {
         const https = require('https').createServer({
             key: fs.readFileSync('encryption/private.key'),
