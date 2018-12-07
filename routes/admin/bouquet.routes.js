@@ -15,7 +15,29 @@ router.get('/', (req, res) => {
 })
 
 router.get('/create', (req, res) => {
-    res.render('admin/bouquet/bouquet')
+    async.parallel([
+        function(callback){
+            Color.find({},function(err,colors){
+                if(err) return callback(err)
+                callback(null, colors)
+            })
+        },
+        function(callback){
+            Flower.find({},function(err, flowers){
+                if(err) return callback(err)
+                callback(null, flowers)
+            })
+        }
+    ],
+    function (err, result) {
+        if (result[0]) {
+            return res.render('admin/bouquet/bouquet', {
+                colors: result[0],
+                flowers: result[1]
+            })
+        }
+        res.send('Не найдено')
+    })
 })
 
 router.post('/update', (req, res, next) => {
@@ -35,7 +57,8 @@ router.post('/update', (req, res, next) => {
     } else {
         new Bouquet({
             title: req.body.title,
-            uri: uri
+            uri: uri,
+            flower: req.body.flowers
         }).save((err, bouquet) => {
             if (err) next(err)
             res.redirect('/admin/bouquet/' + bouquet._id)

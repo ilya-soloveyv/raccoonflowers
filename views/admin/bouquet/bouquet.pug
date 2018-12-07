@@ -34,9 +34,10 @@ block main
                     each flower in flowers
                         .form-check
                             - var checked = false;
-                            - function testtest (number) { return number.id == flower.id; }
-                            if bouquet.flower.some((testtest))
-                                - checked = true
+                            if bouquet
+                                - function testtest (number) { return number.id == flower.id; }
+                                if bouquet.flower.some((testtest))
+                                    - checked = true
                             input.form-check-input(type="checkbox", name="flowers", value= flower._id, id= flower._id, checked= checked)
                             label.form-check-label(for= flower._id)= flower.title
                 .col-lg-4
