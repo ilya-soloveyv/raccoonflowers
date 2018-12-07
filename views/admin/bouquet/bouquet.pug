@@ -1,0 +1,47 @@
+extends ../app
+
+block main
+    nav(aria-label="breadcrumb")
+        ol.breadcrumb
+            li.breadcrumb-item
+                a(href="/admin/bouquet") Букеты
+            li.breadcrumb-item.active(aria-current="page")
+                if bouquet
+                    | #{bouquet.title}
+                else
+                    | Новый букет
+    .container-fluid
+        form(action="/admin/bouquet/update", method="POST")
+            .row
+                .col-lg-4
+                    if bouquet
+                        input(type="hidden", name="id", value=bouquet._id)
+                    .form-group
+                        label(for="title") Название букета
+                        if bouquet
+                            - var title = bouquet.title
+                        else
+                            - var title = null
+                        input#title.form-control(type="text", name="title", value= title)
+                    .form-group
+                        label(for="uri") URI
+                        if bouquet
+                            - var uri = bouquet.uri
+                        else
+                            - var uri = null
+                        input#uri.form-control(type="text", name="uri", value= uri)
+                .col-lg-4
+                    each flower in flowers
+                        .form-check
+                            - var checked = false;
+                            - function testtest (number) { return number.id == flower.id; }
+                            if bouquet.flower.some((testtest))
+                                - checked = true
+                            input.form-check-input(type="checkbox", name="flowers", value= flower._id, id= flower._id, checked= checked)
+                            label.form-check-label(for= flower._id)= flower.title
+                .col-lg-4
+                    each color in colors
+                        .form-check
+                            input.form-check-input(type="checkbox", name="colors", value= color._id, id= color._id)
+                            label.form-check-label(for= color._id)= color.title
+            button.btn.btn-success(type="submit") Сохранение

@@ -2,4 +2,7 @@ extends app
 
 block main
     .container
-        h1 #{flower.title}
+        h1 #{bouquet.title}
+        ul
+            each flower in bouquet.flower
+                li= flower.title

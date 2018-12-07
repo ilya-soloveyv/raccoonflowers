@@ -4,6 +4,18 @@ block main
     .container
         h1 Каталог
         ul
-            each flower in flowers.docs
+            each bouquet in bouquets.docs
                 li
-                    a(href="/catalog/"+flower.id) #{flower.title}
+                    a(href="/catalog/"+bouquet.uri) #{bouquet.title}
+        if bouquets.pages > 1
+            nav(aria-label="Page navigation example")
+                ul.pagination
+                    - var n = 1;
+                    while n <= bouquets.pages
+                        if bouquets.page == n
+                            - var li_class = "page-item active"
+                        else
+                            - var li_class = "page-item"
+                        li(class= li_class)
+                            a.page-link(href="/catalog?p=" + n)= n
+                        - n++

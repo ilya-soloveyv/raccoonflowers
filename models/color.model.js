@@ -8,10 +8,9 @@ const colorSchema = new Schema({
         required: true
     }
 })
+
 colorSchema.plugin(mongoosePaginate)
 const Color = mongoose.model('color', colorSchema)
-
-
 
 module.exports = Color
 

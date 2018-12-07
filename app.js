@@ -10,7 +10,7 @@ const fs = require('fs')
 const pug = require('pug')
 require('dotenv').config()
 
-const Flower = require('./models/flower.model')
+const Bouquet = require('./models/bouquet.model')
 
 app.set('view engine', 'pug')
 
@@ -64,22 +64,26 @@ app.get('/', (req, res) => {
 })
 
 app.get('/catalog', (req, res) => {
-    Flower.paginate({}, { page: (req.query.p) ? req.query.p : 1, limit: 3 }, function(err, flowers) {
+    Bouquet.paginate({}, { page: (req.query.p) ? req.query.p : 1, limit: 3 }, function(err, bouquets) {
         res.render('catalog', {
             title: 'Каталог',
-            flowers: flowers
+            bouquets: bouquets
         })
     })
 })
 
 app.get('/catalog/:uri', (req, res) => {
-    Flower.findOne({ _id: req.params.uri }, function(err, flower) {
+    Bouquet.where({ uri: req.params.uri }).populate('flower').findOne((err, bouquet) => {
         return res.render('product', {
-            title: 'Цветок ' + flower.title,
-            flower: flower
+            title: 'Букет ' + bouquet.title,
+            bouquet: bouquet
         })
     })
 })
+
+
+
+
 
 
 
