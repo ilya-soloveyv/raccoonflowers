@@ -30,9 +30,7 @@ function cleaner() {
 gulp.task('js_min', () => {
     return gulp
         .src([
-            'node_modules/jquery/dist/jquery.min.js',
-            'node_modules/popper.js/dist/umd/popper.min.js',
-            'node_modules/bootstrap/dist/js/bootstrap.min.js',
+            'node_modules/jquery/dist/jquery.min.js',            
             'public/src/js/public/app.js'
         ], { allowEmpty: true })
         .pipe(concat('app.js'))
@@ -51,8 +49,7 @@ gulp.task('js_min', () => {
 
 gulp.task('css_min', () => {
     return gulp
-        .src([
-            'node_modules/bootstrap/dist/css/bootstrap.min.css',
+        .src([            
             'public/src/css/public/app.css'            
         ], { allowEmpty: true })
         .pipe(concat('app.min.css'))
