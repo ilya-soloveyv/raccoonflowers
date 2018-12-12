@@ -2,12 +2,12 @@ const router = require('express').Router()
 const Bouquet = require('../../models/bouquet.model')
 const Flower = require('../../models/flower.model')
 const Color = require('../../models/color.model')
+const Size = require('../../models/size.model')
 const translit = require('cyrillic-to-translit-js')
 const async = require("async")
 
 router.get('/', (req, res) => {
     Bouquet.paginate({}, { page: (req.query.p) ? req.query.p : 1, limit: 3 }, function(err, bouquets) {
-        console.log(bouquets)
         res.render('admin/bouquet/bouquets', {
             bouquets: bouquets
         })
@@ -41,7 +41,8 @@ router.get('/create', (req, res) => {
 })
 
 router.post('/update', (req, res, next) => {
-    console.log(req.body.flowers)
+    // console.log(req.body.flowers)
+    // return false
     var uri = (typeof req.body.uri !== 'undefined' && req.body.uri.trim()) ?
         translit().transform(req.body.uri.trim()).replace(/\s/g, '_') :
         translit().transform(req.body.title.trim(), '_').replace(/\s/g, '').toLowerCase()
@@ -49,7 +50,8 @@ router.post('/update', (req, res, next) => {
         Bouquet.findOneAndUpdate({ _id: req.body.id }, { $set: {
             title: req.body.title,
             uri: uri,
-            flower: req.body.flowers
+            flower: req.body.flowers,
+            size: req.body.sizes
         }}, (err, bouquet) => {
             if (err) next(err)
             res.redirect('/admin/bouquet/' + bouquet._id)
@@ -58,7 +60,8 @@ router.post('/update', (req, res, next) => {
         new Bouquet({
             title: req.body.title,
             uri: uri,
-            flower: req.body.flowers
+            flower: req.body.flowers,
+            size: req.body.sizes
         }).save((err, bouquet) => {
             if (err) next(err)
             res.redirect('/admin/bouquet/' + bouquet._id)
@@ -69,7 +72,7 @@ router.post('/update', (req, res, next) => {
 router.get('/:id', (req, res) => {
     async.parallel([
         function (callback) {
-            Bouquet.where({ _id: req.params.id }).populate('flower').findOne((err, bouquet) => {
+            Bouquet.where({ _id: req.params.id }).populate(['flower', 'size']).findOne((err, bouquet) => {
                 if (err) return callback (err)
                 callback (null, bouquet)
             })
@@ -85,6 +88,12 @@ router.get('/:id', (req, res) => {
                 if(err) return callback(err)
                 callback(null, flowers)
             })
+        },
+        function(callback){
+            Size.find({},function(err, sizes){
+                if(err) return callback(err)
+                callback(null, sizes)
+            })
         }
     ],
     function (err, result) {
@@ -93,7 +102,8 @@ router.get('/:id', (req, res) => {
             return res.render('admin/bouquet/bouquet', {
                 bouquet: result[0],
                 colors: result[1],
-                flowers: result[2]
+                flowers: result[2],
+                sizes: result[3]
             })
         }
         res.send('Не найдено')

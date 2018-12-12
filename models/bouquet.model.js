@@ -17,7 +17,11 @@ const bouquetSchema = new Schema({
     },
     flower: [{
         type: Schema.Types.ObjectId,
-        ref: 'flower' 
+        ref: 'flower'
+    }],
+    size: [{
+        type: Schema.Types.ObjectId,
+        ref: 'size'
     }]
 })
 bouquetSchema.plugin(mongoosePaginate)

@@ -13,7 +13,7 @@ block main
     .container-fluid
         form(action="/admin/bouquet/update", method="POST")
             .row
-                .col-lg-4
+                .col-lg-2
                     if bouquet
                         input(type="hidden", name="id", value=bouquet._id)
                     .form-group
@@ -30,19 +30,32 @@ block main
                         else
                             - var uri = null
                         input#uri.form-control(type="text", name="uri", value= uri)
-                .col-lg-4
+                .col-lg-2
+                    <label>Цветы</label>
                     each flower in flowers
                         .form-check
                             - var checked = false;
-                            if bouquet
-                                - function testtest (number) { return number.id == flower.id; }
-                                if bouquet.flower.some((testtest))
+                            if bouquet && bouquet.flower
+                                - function bouquetChecked (number) { return number.id == flower.id; }
+                                if bouquet.flower.some((bouquetChecked))
                                     - checked = true
                             input.form-check-input(type="checkbox", name="flowers", value= flower._id, id= flower._id, checked= checked)
                             label.form-check-label(for= flower._id)= flower.title
-                .col-lg-4
+                .col-lg-2
+                    <label>Цветовая гамма</label>
                     each color in colors
                         .form-check
                             input.form-check-input(type="checkbox", name="colors", value= color._id, id= color._id)
                             label.form-check-label(for= color._id)= color.title
+                .col-lg-2
+                    <label>Размеры</label>
+                    each size in sizes
+                        .form-check
+                            - var checked = false;
+                            if size && bouquet.size
+                                - function sizeChecked (number) { return number.id == size.id; }
+                                if bouquet.size.some((sizeChecked))
+                                    - checked = true
+                            input.form-check-input(type="checkbox", name="sizes", value= size._id, id= size._id, checked= checked)
+                            label.form-check-label(for= size._id)= size.title
             button.btn.btn-success(type="submit") Сохранение
