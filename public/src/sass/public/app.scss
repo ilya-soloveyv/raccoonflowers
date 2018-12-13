@@ -1,7 +1,249 @@
-body {
-    // background: green
+//Import
+@import 'fonts';
+@import 'catalog';
+
+// Color
+$m-color: #CFBC9E;
+
+// Mixin
+@mixin placeholder {
+  &::-webkit-input-placeholder { @content; }
+  &:-moz-placeholder           { @content; }
+  &::-moz-placeholder          { @content; }
+  &:-ms-input-placeholder      { @content; }  
 }
+
+// Specification
+
+body {
+    font-family: 'Gill Sans';
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.02em;
+    color: $m-color; 
+}
+
+div, p, form, input, a, span, button {
+	box-sizing: border-box;
+}
+
+ul, li {
+	display: block;
+	padding: 0;
+	margin: 0;    
+}
+
+h1, h2, h3, h4, h5, h6 {
+	padding: 0;
+	margin: 0;	
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+a, a:hover, a:active {
+	text-decoration: none;	
+}
+
+a:focus {
+	outline: none;
+}
+
+input, input:hover, input:focus, input:active,
+button, button:hover, button:focus, button:active {
+	outline: none;
+}
+
+.container {
+    width: 1790px;
+    margin: 0 auto;
+}
+
+// Header 
+
+.header {
+    
+}
+
+.navigation {
+    padding:48px 0 34px;
+}
+
+.search {
+    cursor: pointer;
+    width: 10%;    
+    &-block {
+        padding: 25px 0;
+        border-bottom: 1px solid #D3D3D3;
+        text-align: center;
+        display: none;
+    }
+    &-wrapp {
+        position: relative;
+    }
+    &-field {
+        width: 70%;
+        padding: 20px 30px;
+        border: none;
+        border-top: 1px solid #D3D3D3;
+        border-bottom: 1px solid #D3D3D3;
+        text-align: center;
+        color: $m-color;
+        @include placeholder {
+            color: #D3D3D3;
+            text-transform: uppercase;
+            transform: translateX(25px);
+        }        
+    }
+    &-icon-input {
+        transform: translate(-30px,12px);
+    }
+    &-close {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+}
+
 .logo {
-    max-height: 55px;
-    margin: 50px auto;
+    &-img {
+        max-height: 55px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+.inter {
+    display: flex;
+    align-items: center;
+    width: 10%;
+    .sign-wrapp {
+        margin: 0 15px;
+        .cabinet {
+            font-family: 'Helvetica Neue';
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        .sign-link {
+            font-family: 'Helvetica';
+            font-size: 9px;
+            color: $m-color;
+        }
+    }
+    img {
+        margin-top: -15px;
+        cursor: pointer;
+    }
+}
+
+.nav-menu {
+    border-top: 1px solid #D3D3D3;
+    border-bottom: 1px solid #D3D3D3;
+    padding: 20px 0 22px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    &-item {
+        transition: all .2s;
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+    &-link {
+        text-transform: uppercase;
+        font-size: 12px;
+        color: $m-color;
+    }
+}
+
+// Footer
+
+
+.footer {
+    margin-top: 200px;
+    &-main-info {
+        padding: 25px 0;
+        border-top: 1px solid #D3D3D3;
+        border-bottom: 1px solid #D3D3D3;
+        display: flex;
+        align-items: center;
+    }
+    .messenger {
+        margin: 0 24px 0 50px;
+    }
+    &-phone {
+        font-size: 13px;
+        color: #707070;
+    }
+    &-social {
+        width: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 363px;
+    }
+    &-all-info {
+        padding-top: 43px;
+        padding-bottom: 72px;
+        border-bottom: 1px solid #D3D3D3;
+        display: flex;
+        justify-content: space-between;
+    }
+    &-info-text {
+        display: flex;
+        width: 45%;
+        justify-content: space-between;
+    }
+    .title-info {
+        font-size: 11px;
+        color: $m-color;
+        text-transform: uppercase;
+        font-weight: normal;
+        margin-bottom: 40px;
+    }
+    .list-info {
+        &_item {
+            margin-bottom: 4px;
+        }
+        &_link {
+            font-size: 12px;
+            color: #707070;
+        }
+    }
+    .subscribe {
+        input {
+            border: none;
+            padding: 15px 0;
+            padding-left: 25px;
+            width: 265px;
+        }
+        &-send {
+            padding: 15px 25px;
+            background: $m-color;
+            border: none;
+            text-transform: uppercase;
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+    &-logo {
+        padding-top: 50px;
+        padding-bottom: 85px;
+        .logo-img {
+            max-height: 45px;
+        }
+    }
 }
