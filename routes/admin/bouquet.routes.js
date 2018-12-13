@@ -27,13 +27,20 @@ router.get('/create', (req, res) => {
                 if(err) return callback(err)
                 callback(null, flowers)
             })
+        },
+        function(callback){
+            Size.find({},function(err, sizes){
+                if(err) return callback(err)
+                callback(null, sizes)
+            })
         }
     ],
     function (err, result) {
         if (result[0]) {
             return res.render('admin/bouquet/bouquet', {
                 colors: result[0],
-                flowers: result[1]
+                flowers: result[1],
+                sizes: result[2]
             })
         }
         res.send('Не найдено')

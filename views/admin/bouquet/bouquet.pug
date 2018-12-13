@@ -52,7 +52,7 @@ block main
                     each size in sizes
                         .form-check
                             - var checked = false;
-                            if size && bouquet.size
+                            if bouquet && bouquet.size
                                 - function sizeChecked (number) { return number.id == size.id; }
                                 if bouquet.size.some((sizeChecked))
                                     - checked = true
