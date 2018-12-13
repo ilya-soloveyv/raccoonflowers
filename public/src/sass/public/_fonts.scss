@@ -1,0 +1,54 @@
+
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('/fonts/HelveticaNeue.eot');
+  /* IE9 Compat Modes */
+  src: url('/fonts/HelveticaNeue.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('/fonts/HelveticaNeue.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('/fonts/HelveticaNeue.woff') format('woff'),
+    /* Pretty Modern Browsers */
+    url('/fonts/HelveticaNeue.ttf') format('truetype'),
+    /* Safari, Android, iOS */
+    url('/fonts/HelveticaNeue.svg#HelveticaNeue') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/fonts/Helvetica.eot');
+  /* IE9 Compat Modes */
+  src: url('/fonts/Helvetica.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('/fonts/Helvetica.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('/fonts/Helvetica.woff') format('woff'),
+    /* Pretty Modern Browsers */
+    url('/fonts/Helvetica.ttf') format('truetype'),
+    /* Safari, Android, iOS */
+    url('/fonts/Helvetica.svg#Helvetica') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/GillSans.eot');
+  /* IE9 Compat Modes */
+  src: url('/fonts/GillSans.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('/fonts/GillSans.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('/fonts/GillSans.woff') format('woff'),
+    /* Pretty Modern Browsers */
+    url('/fonts/GillSans.ttf') format('truetype'),
+    /* Safari, Android, iOS */
+    url('/fonts/GillSans.svg#GillSans') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
