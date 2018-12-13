@@ -1,25 +1,31 @@
 extends ../app
 
 block main
-    .container-fluid
-        .row
-            .col-3
-                | filters
-            .col-9
-                h1 Каталог
-                ul
-                    each bouquet in bouquets.docs
-                        li
-                            a(href="/catalog/"+bouquet.uri) #{bouquet.title}
-                if bouquets.pages > 1
-                    nav(aria-label="Page navigation example")
-                        ul.pagination
-                            - var n = 1;
-                            while n <= bouquets.pages
-                                if bouquets.page == n
-                                    - var li_class = "page-item active"
-                                else
-                                    - var li_class = "page-item"
-                                li(class= li_class)
-                                    a.page-link(href="/catalog?p=" + n)= n
-                                - n++
+
+    div.catalog-wrapp
+        div.sidebar
+            
+        div.catalog-content
+
+    //- .container-fluid
+    //-     .row
+    //-         .col-3
+    //-             | filters
+    //-         .col-9
+    //-             h1 Каталог
+    //-             ul
+    //-                 each bouquet in bouquets.docs
+    //-                     li
+    //-                         a(href="/catalog/"+bouquet.uri) #{bouquet.title}
+    //-             if bouquets.pages > 1
+    //-                 nav(aria-label="Page navigation example")
+    //-                     ul.pagination
+    //-                         - var n = 1;
+    //-                         while n <= bouquets.pages
+    //-                             if bouquets.page == n
+    //-                                 - var li_class = "page-item active"
+    //-                             else
+    //-                                 - var li_class = "page-item"
+    //-                             li(class= li_class)
+    //-                                 a.page-link(href="/catalog?p=" + n)= n
+    //-                             - n++

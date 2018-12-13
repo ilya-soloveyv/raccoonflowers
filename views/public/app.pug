@@ -9,16 +9,53 @@ html(lang="ru")
         else
             link(rel="stylesheet", href="/app-c619a72245.min.css")
     body
+        header.header
+            div.search-block
+                div.container
+                    div.search-wrapp
+                        input.search-field#search-field(type="text", name="search", placeholder="Поиск")
+                        label(for="search-field")
+                            img.search-icon-input(src="/images/search-input.png", alt="Иконка поиска")
+                        span.search-close
+                            img(src="/images/search-close.png", alt="Иконка поиска")
+            div.navigation
+                div.container
+                    div.top-nav              
+                        div.search
+                            img.search-icon(src="/images/search.png", alt="Иконка поиска")
+                        div.logo
+                            a.logo-link(href="/")
+                                img.logo-img(src="/images/logo.svg", alt="Логотип Raccoon Flowers")
+                        div.inter
+                            img.star(src="/images/star.png", alt="Звезда Raccoon Flowers")
+                            div.sign-wrapp
+                                p.cabinet My raccoon
+                                a.sign-link(href="#") Вход
+                                span /
+                                a.sign-link(href="#") Регистрация
+                            img.bucket(src="/images/bucket.png", alt="Корзина Raccoon Flowers")
+            div.nav-menu
+                div.container
+                    nav
+                        ul.menu
+                            li.menu-item
+                                a.menu-link(href="#") Новинки
+                            li.menu-item
+                                a.menu-link(href="#") Букеты в шляпной коробке
+                            li.menu-item
+                                a.menu-link(href="#") Букеты с лентой
+                            li.menu-item
+                                a.menu-link(href="#") Цветочная подписка
+                            li.menu-item
+                                a.menu-link(href="#") Розы David Austin
+                            li.menu-item
+                                a.menu-link(href="#") Уход за цветами
+                            li.menu-item
+                                a.menu-link(href="#") Корпоративным клиентам
+                            li.menu-item
+                                a.menu-link(href="#") The gallery        
 
-        img.logo(src="/images/logo.svg", alt="Логотип Raccoon Flowers")
-        nav.navbar.navbar-expand-md.navbar-light.bg-light
-            a.navbar-brand(href="/") Raccoon Flowers
-            button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarSupportedContent", aria-controls="navbarSupportedContent", aria-expanded="false", aria-label="Toggle navigation")
-                span.navbar-toggler-icon
-            div#navbarSupportedContent.collapse.navbar-collapse
-                ul.navbar-nav.mr-auto
-                    li.nav-item
-                        a.nav-link(href="/catalog") Каталог
+        
         block main
 
 
@@ -26,6 +63,63 @@ html(lang="ru")
             script(src="/jquery/jquery.min.js")
             script(src="/src/js/public/app.js")
         else
-            script(src='/app-b35c7d1d77.min.js')
+            script(src='/app-ba92d7cc8b.min.js')
+        footer.footer
+            div.container
+                div.footer-main-info
+                    a.footer-phone(href="tel:88003507457") 8 (800) 350 7457
+                    img.messenger(src="/images/messenger.png")
+                    a.footer-phone(href="tel:+79312715782") +7 (931) 271-57-82
+                    div.footer-social
+                        a.footer-social_link(href="#")
+                            img(src="/images/whatsapp.png")
+                        a.footer-social_link(href="#")
+                            img(src="/images/viber.png")
+                        a.footer-social_link(href="#")
+                            img(src="/images/telegram.png")
+                div.footer-all-info
+                    ul.footer-info-text
+                        li.footer-info-text_item
+                            h6.title-info Racconflowers.com
+                        li.footer-info-text_item
+                            h6.title-info О нас
+                            ul.list-info
+                                li.list-info_item
+                                    a.list-info_link О компания
+                                li.list-info_item
+                                    a.list-info_link FAQs
+                                li.list-info_item
+                                    a.list-info_link Сотрудничество
+                                li.list-info_item
+                                    a.list-info_link Связаться с нами
+                        li.footer-info-text_item                        
+                            h6.title-info Сервис
+                            ul.list-info
+                                li.list-info_item
+                                    a.list-info_link Доставка
+                                li.list-info_item
+                                    a.list-info_link Оплата
+                                li.list-info_item
+                                    a.list-info_link Возврат
+                                li.list-info_item
+                                    a.list-info_link Консьерж-сервис
+                                li.list-info_item
+                                    a.list-info_link Подарочные карты
+                                li.list-info_item
+                                    a.list-info_link Программа лояльности
+                        li.footer-info-text_item
+                            h6.title-info Информация
+                            ul.list-info
+                                li.list-info_item
+                                    a.list-info_link Политика<br> конфиденциальности
+                    form.subscribe
+                        h6.title-info Подписывайтесь на нас
+                        input(type="email", name="email", placeholder="Ваш email")
+                        button.subscribe-send Подписаться
+                div.footer-logo
+                    a.logo-link(href="/")
+                        img.logo-img(src="/images/logo.svg", alt="Логотип Raccoon Flowers")
+                    
+
 
 
