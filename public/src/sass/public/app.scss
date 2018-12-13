@@ -4,6 +4,7 @@
 
 // Color
 $m-color: #CFBC9E;
+$grey: #707070;
 
 // Mixin
 @mixin placeholder {
@@ -58,7 +59,7 @@ button, button:hover, button:focus, button:active {
 }
 
 .container {
-    width: 1790px;
+    width: 93%;
     margin: 0 auto;
 }
 
@@ -126,8 +127,7 @@ button, button:hover, button:focus, button:active {
 
 .inter {
     display: flex;
-    align-items: center;
-    width: 10%;
+    align-items: center;    
     .sign-wrapp {
         margin: 0 15px;
         .cabinet {
@@ -235,8 +235,14 @@ button, button:hover, button:focus, button:active {
             background: $m-color;
             border: none;
             text-transform: uppercase;
+            border: 1px solid $m-color;
             color: #fff;
             cursor: pointer;
+            transition: all .3s;
+            &:hover {
+                color: $m-color;
+                background: #fff;
+            }
         }
     }
     &-logo {
