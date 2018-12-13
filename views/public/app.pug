@@ -7,7 +7,7 @@ html(lang="ru")
         if env.NODE_ENV == 'development'
             link(rel="stylesheet", href="/src/css/public/app.css")
         else
-            link(rel="stylesheet", href="/app-8ad92fcc07.min.css")
+            link(rel="stylesheet", href="/app-c619a72245.min.css")
     body
         header.header
             div.search-block
@@ -58,12 +58,6 @@ html(lang="ru")
         
         block main
 
-
-        if env.NODE_ENV == 'development'
-            script(src="/jquery/jquery.min.js")
-            script(src="/src/js/public/app.js")
-        else
-            script(src='/app-ba92d7cc8b.min.js')
         footer.footer
             div.container
                 div.footer-main-info
@@ -119,7 +113,9 @@ html(lang="ru")
                 div.footer-logo
                     a.logo-link(href="/")
                         img.logo-img(src="/images/logo.svg", alt="Логотип Raccoon Flowers")
-                    
 
-
-
+        if env.NODE_ENV == 'development'
+            script(src="/jquery/jquery.min.js")
+            script(src="/src/js/public/app.js")
+        else
+            script(src='/app-ba92d7cc8b.min.js')
