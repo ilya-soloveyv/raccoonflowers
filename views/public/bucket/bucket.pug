@@ -1,0 +1,83 @@
+extends ../app
+
+block main
+
+	.bucket-wrapper
+		.container
+			.bucket-main_img
+				img(src="/images/car.png", alt="Машина")
+			table.order-table
+				tr
+					th 
+					th Название и описание
+					th Размер букета
+					th Количество
+					th.last-th Стоимость
+				tr
+					td.first-td
+						img(src="/images/flower1.png", alt="Букет")
+					td 
+						p.flower-name To the moon and back
+						p.flower-desc Сhoose a beautiful and comfortable coat
+						p.flower-cost_mobile 7 500 рублей
+					td.flower-size
+						button.arrow-up-size
+						input(type="radio", id="s", name="size")
+						label(for="s" class="size-check") S
+						input(type="radio", id="m", name="size")
+						label(for="m" class="size-check label-size-none") M
+						input(type="radio", id="l", name="size")
+						label(for="l" class="size-check label-size-none") L
+						input(type="radio", id="xl", name="size")
+						label(for="xl" class="size-check label-size-none") XL
+						button.arrow-down-size
+					td.flower-count
+						button.arrow-up-number
+						button.flower-minus -
+						p.flower-acount 1
+						button.flower-plus +
+						button.arrow-down-number
+					td.flower-cost 7 500 рублей
+				tr
+					td.first-td
+						img(src="/images/flower2.png", alt="Букет")
+					td
+						p.flower-name To the moon and back
+						p.flower-desc Сhoose a beautiful and comfortable coat
+						p.flower-cost_mobile 7 500 рублей
+					td.flower-size
+						button.arrow-up-size
+						input(type="radio", id="s1", name="size1")
+						label(for="s1" class="size-check") S
+						input(type="radio", id="m1", name="size1")
+						label(for="m1" class="size-check label-size-none") M
+						input(type="radio", id="l1", name="size1")
+						label(for="l1" class="size-check label-size-none") L
+						input(type="radio", id="xl1", name="size1")
+						label(for="xl1" class="size-check label-size-none") XL
+						button.arrow-down-size
+					td.flower-count
+						button.arrow-up-number
+						button.flower-minus -
+						p.flower-acount 2
+						button.flower-plus +
+						button.arrow-down-number
+					td.flower-cost 7 500 рублей
+			.continue-buy
+				.promo
+					form.promo-code
+						input(name="promocode", placeholder="Введите промо-код")
+						button.send-promocode Применить
+					button.back-to-shop Вернуться к шопингу
+				.all-cost
+					.calc
+						.calc-text
+							p.calc-text_main Стоимость букета:
+							p.calc-text_main Стоимость доставки:
+							p.calc-text_so Итого:
+						.calc-number
+							p.calc-cost <span>15 000</span> рублей
+							p.calc-free <span>Бесплатно</span> в пределах КАД и МКАД 
+							p.calc-cost <span>15 000</span> рублей
+					button.back-to-shop_mobile Вернуться к шопингу
+					button.continue-order Продолжить оформление заказа

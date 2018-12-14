@@ -74,6 +74,12 @@ app.get('/catalog', (req, res) => {
     })
 })
 
+app.get('/bucket', (req, res) => {
+    res.render('public/bucket/bucket', {
+        title: 'Корзина'
+    })
+})
+
 app.get('/catalog/:uri', (req, res) => {
     Bouquet.where({ uri: req.params.uri }).populate('flower').findOne((err, bouquet) => {
         return res.render('public/catalog/product', {
