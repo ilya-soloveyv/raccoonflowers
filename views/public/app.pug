@@ -10,6 +10,7 @@ html(lang="ru")
             link(rel="stylesheet", href="/app-c619a72245.min.css")
     body
         header.header
+            .overlay
             .search-block
                 .container
                     .search-wrapp
@@ -20,7 +21,9 @@ html(lang="ru")
                             img(src="/images/search-close.png", alt="Иконка поиска")
             .navigation
                 .container
-                    .top-nav              
+                    .top-nav
+                        .burger
+                            img.burger-icon(src="/images/burger.png", alt="Бургер меню")
                         .search
                             img.search-icon(src="/images/search.png", alt="Иконка поиска")
                         .logo
@@ -34,9 +37,16 @@ html(lang="ru")
                                 span /
                                 a.sign-link(href="#") Регистрация
                             img.bucket(src="/images/bucket.png", alt="Корзина Raccoon Flowers")
+            .search-block_mobile
+                .container
+                    .search-wrapp_mobile
+                        img.search-icon(src="/images/search.png", alt="Иконка поиска")
+                        input.search-field#search-field(type="text", name="search", placeholder="Поиск")
+                
             .nav-menu
                 .container
                     nav
+                        img.menu-close(src="/images/search-close.png", alt="Закрыть меню")
                         ul.menu
                             li.menu-item
                                 a.menu-link(href="#") Новинки
@@ -60,7 +70,12 @@ html(lang="ru")
 
         footer.footer
             .container
+                h6.title-info_mobile Подписывайтесь на нас
+                form.subscribe_mobile                        
+                    input(type="email", name="email", placeholder="Ваш email")
+                    button.subscribe-send Подписаться
                 .footer-main-info
+                    img.phone(src="/images/phone.png")
                     a.footer-phone(href="tel:88003507457") 8 (800) 350 7457
                     img.messenger(src="/images/messenger.png")
                     a.footer-phone(href="tel:+79312715782") +7 (931) 271-57-82

@@ -6,81 +6,87 @@ block main
         .container
             .catalog-block
                 .sidebar
+                    img.sidebar-close(src="/images/search-close.png", alt="Закрыть меню")
                     input(type="checkbox", id="avtor-bouquet")
                     label(for="avtor-bouquet" class="avtor-bouquet under") Авторские букеты
                     input(type="checkbox", id="mono-bouquet")
                     label(for="mono-bouquet" class="avtor-bouquet") Монобукеты
-                    .filter-block
+                    .filter-block.filter-block_first
                         p.filter-title Тип букета
-                        input(type="checkbox", id="box")
-                        label(for="box" class="filter-check") В шляпной коробке
-                        input(type="checkbox", id="paper")
-                        label(for="paper" class="filter-check") В бумаге
+                        .checkbox-block
+                            input(type="checkbox", id="box")
+                            label(for="box" class="filter-check") В шляпной коробке
+                            input(type="checkbox", id="paper")
+                            label(for="paper" class="filter-check") В бумаге
                     .filter-block
                         p.filter-title Цветы
-                        input(type="checkbox", id="pionu")
-                        label(for="pionu" class="filter-check") Пионы
-                        input(type="checkbox", id="pionuall")
-                        label(for="pionuall" class="filter-check") Пионовидные и садовые розы
-                        input(type="checkbox", id="rose")
-                        label(for="rose" class="filter-check") Розы David Austin
-                        input(type="checkbox", id="ranunkul")
-                        label(for="ranunkul" class="filter-check") Ранункулюсы
-                        input(type="checkbox", id="orhideo")
-                        label(for="orhideo" class="filter-check") Орхидеи
-                        input(type="checkbox", id="siren")
-                        label(for="siren" class="filter-check") Сирень
-                        input(type="checkbox", id="liziantus")
-                        label(for="liziantus" class="filter-check") Лизиантусы
-                        input(type="checkbox", id="other")
-                        label(for="other" class="filter-check") Другие цветы
-                        input(type="text" placeholder="например: Red Piano" class="input-search-flowers" id="search-flowers")
-                        label(for="search-flowers" class="search-flowers") поиск
-                            img.search-icon-flowers(src="/images/search-flowers.png", alt="Иконка поиска")
+                        .checkbox-block
+                            input(type="checkbox", id="pionu")
+                            label(for="pionu" class="filter-check") Пионы
+                            input(type="checkbox", id="pionuall")
+                            label(for="pionuall" class="filter-check") Пионовидные и садовые розы
+                            input(type="checkbox", id="rose")
+                            label(for="rose" class="filter-check") Розы David Austin
+                            input(type="checkbox", id="ranunkul")
+                            label(for="ranunkul" class="filter-check") Ранункулюсы
+                            input(type="checkbox", id="orhideo")
+                            label(for="orhideo" class="filter-check") Орхидеи
+                            input(type="checkbox", id="siren")
+                            label(for="siren" class="filter-check") Сирень
+                            input(type="checkbox", id="liziantus")
+                            label(for="liziantus" class="filter-check") Лизиантусы
+                            input(type="checkbox", id="other")
+                            label(for="other" class="filter-check") Другие цветы
+                            input(type="text" placeholder="например: Red Piano" class="input-search-flowers" id="search-flowers")
+                            label(for="search-flowers" class="search-flowers") поиск
+                                img.search-icon-flowers(src="/images/search-flowers.png", alt="Иконка поиска")
                     .filter-block
                         p.filter-title Цветовая гамма
-                        input(type="checkbox", id="bright")
-                        label(for="bright" class="filter-check") Светлая
-                        input(type="checkbox", id="light")
-                        label(for="light" class="filter-check light") Яркая
-                        input(type="checkbox", id="white")
-                        label(for="white" class="filter-check") Белая
-                        input(type="checkbox", id="pink")
-                        label(for="pink" class="filter-check") Розовая
-                        input(type="checkbox", id="persik")
-                        label(for="persik" class="filter-check") Персиковая
-                        input(type="checkbox", id="purple")
-                        label(for="purple" class="filter-check") Фиолетовая
-                        input(type="checkbox", id="red")
-                        label(for="red" class="filter-check") Красная
-                        input(type="checkbox", id="yellow")
-                        label(for="yellow" class="filter-check") Желтая
-                        input(type="checkbox", id="blue")
-                        label(for="blue" class="filter-check") Синяя
-                        input(type="checkbox", id="light-blue")
-                        label(for="light-blue" class="filter-check") Голубая
+                        .checkbox-block
+                            input(type="checkbox", id="bright")
+                            label(for="bright" class="filter-check") Светлая
+                            input(type="checkbox", id="light")
+                            label(for="light" class="filter-check light") Яркая
+                            input(type="checkbox", id="white")
+                            label(for="white" class="filter-check") Белая
+                            input(type="checkbox", id="pink")
+                            label(for="pink" class="filter-check") Розовая
+                            input(type="checkbox", id="persik")
+                            label(for="persik" class="filter-check") Персиковая
+                            input(type="checkbox", id="purple")
+                            label(for="purple" class="filter-check") Фиолетовая
+                            input(type="checkbox", id="red")
+                            label(for="red" class="filter-check") Красная
+                            input(type="checkbox", id="yellow")
+                            label(for="yellow" class="filter-check") Желтая
+                            input(type="checkbox", id="blue")
+                            label(for="blue" class="filter-check") Синяя
+                            input(type="checkbox", id="light-blue")
+                            label(for="light-blue" class="filter-check") Голубая
                     .filter-block
                         p.filter-title Размер букета
-                        input(type="checkbox", id="xs")
-                        label(for="xs" class="filter-check") XS
-                        input(type="checkbox", id="s")
-                        label(for="s" class="filter-check") S
-                        input(type="checkbox", id="m")
-                        label(for="m" class="filter-check") M
-                        input(type="checkbox", id="l")
-                        label(for="l" class="filter-check") L
-                        input(type="checkbox", id="xl")
-                        label(for="xl" class="filter-check") XL
+                        .checkbox-block
+                            input(type="checkbox", id="xs")
+                            label(for="xs" class="filter-check") XS
+                            input(type="checkbox", id="s")
+                            label(for="s" class="filter-check") S
+                            input(type="checkbox", id="m")
+                            label(for="m" class="filter-check") M
+                            input(type="checkbox", id="l")
+                            label(for="l" class="filter-check") L
+                            input(type="checkbox", id="xl")
+                            label(for="xl" class="filter-check") XL
                     .filter-block
                         p.filter-title Стоимость букета
-                        input(type="checkbox", id="to5k")
-                        label(for="to5k" class="filter-check") до 5 000 рублей
-                        input(type="checkbox", id="to10k")
-                        label(for="to10k" class="filter-check") от 5 000 до 10 000 рублей
-                        input(type="checkbox", id="to18k")
-                        label(for="to18k" class="filter-check") от 10 000 до 18 500 рублей
-                        input(type="checkbox", id="from18k")
-                        label(for="from18k" class="filter-check") от 18 500 рублей
+                        .checkbox-block
+                            input(type="checkbox", id="to5k")
+                            label(for="to5k" class="filter-check") до 5 000 рублей
+                            input(type="checkbox", id="to10k")
+                            label(for="to10k" class="filter-check") от 5 000 до 10 000 рублей
+                            input(type="checkbox", id="to18k")
+                            label(for="to18k" class="filter-check") от 10 000 до 18 500 рублей
+                            input(type="checkbox", id="from18k")
+                            label(for="from18k" class="filter-check") от 18 500 рублей
                     a.reset-all(href="#") Сбросить все фильтры
 
                     
@@ -89,15 +95,26 @@ block main
                 .catalog-content
                     .select-block
                         .select-wrapp
-                            span.select-text Сортировать по:
-                            input(type="radio", name="contact", id="new-choise", value ="new" checked)
-                            label(for="new-choise", class="input-choise") новинки
-                            input(type="radio", name="contact", id="popular-choise", value ="popular")
-                            label(for="popular-choise", class="input-choise") популярное
-                            input(type="radio", name="contact", id="lowcost-choise", value ="lowcost")
-                            label(for="lowcost-choise", class="input-choise") цена по убыванию
-                            input(type="radio", name="contact", id="heightcost-choise", value ="heightcost")
-                            label(for="heightcost-choise", class="input-choise") цена по возростанию
+                            span.burger-filter
+                                img(src="/images/burger-filter.png", alt="Бургер меню")
+                            span.select-text Сортировать по:                            
+                            .select-wrapper
+                                .select-arrow
+                                .select-arrow
+                                select
+                                    option(value="new") новинки
+                                    option(value="popular") популярное
+                                    option(value="lowcost") цена по убыванию
+                                    option(value="heightcost") цена по возростанию
+                            .choise-block
+                                input(type="radio", name="contact", id="new-choise", value ="new" checked)
+                                label(for="new-choise", class="input-choise") новинки
+                                input(type="radio", name="contact", id="popular-choise", value ="popular")
+                                label(for="popular-choise", class="input-choise") популярное
+                                input(type="radio", name="contact", id="lowcost-choise", value ="lowcost")
+                                label(for="lowcost-choise", class="input-choise") цена по убыванию
+                                input(type="radio", name="contact", id="heightcost-choise", value ="heightcost")
+                                label(for="heightcost-choise", class="input-choise") цена по возростанию
                         .select-number 229 товаров
                     ul.catalog-list
                         each bouquet in bouquets.docs
@@ -109,18 +126,18 @@ block main
                                 p.catalog-item_text Сhoose a beautiful and comfortable coat
                                 p.catalog-item_price 7 500 рублей
                                 button.more Подробнее
-                    if bouquets.pages > 1
-                        nav(aria-label="Page navigation example")
-                            ul.pagination
-                                - var n = 1;
-                                while n <= bouquets.pages
-                                    if bouquets.page == n
-                                        - var li_class = "page-item active"
-                                    else
-                                        - var li_class = "page-item"
-                                    li(class= li_class)
-                                        a.page-link(href="/catalog?p=" + n)= n
-                                    - n++
+                    //- if bouquets.pages > 1
+                    //-     nav(aria-label="Page navigation example")
+                    //-         ul.pagination
+                    //-             - var n = 1;
+                    //-             while n <= bouquets.pages
+                    //-                 if bouquets.page == n
+                    //-                     - var li_class = "page-item active"
+                    //-                 else
+                    //-                     - var li_class = "page-item"
+                    //-                 li(class= li_class)
+                    //-                     a.page-link(href="/catalog?p=" + n)= n
+                    //-                 - n++
                     .show
-                        p.youshow Вы просмотрели 21 букетов из 100
+                        p.youshow <span>Вы просмотрели 21 букетов из 100</span>
                         button.show-more Загрузить еще
