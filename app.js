@@ -74,6 +74,15 @@ app.get('/catalog', (req, res) => {
     })
 })
 
+app.get('/product', (req, res) => {
+    Bouquet.paginate({}, { page: (req.query.p) ? req.query.p : 1, limit: 3 }, function (err, bouquets) {
+        res.render('public/catalog/product', {
+            title: 'Карточка товара',
+            bouquets: bouquets
+        })
+    })
+})
+
 app.get('/bucket', (req, res) => {
     res.render('public/bucket/bucket', {
         title: 'Корзина'

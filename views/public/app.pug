@@ -11,6 +11,39 @@ html(lang="ru")
     body
         header.header
             .overlay
+            .bucket-menu
+                img.bucket(src="/images/bucket.png", alt="Корзина Raccoon Flowers")
+                span.bucket-sum 2
+                ul.order-list
+                    li.order-item
+                        img.flower-img(src="/images/flower3.png", alt="Корзина Raccoon Flowers")
+                        .flower-description
+                            p.flower-title TO THE MOON AND BACK
+                            p.flower-text Сhoose a beautiful and comfortable coat
+                            p.flower-price <span>7 500</span> рублей
+                            input(type="radio", id="s2", name="size")
+                            label(for="s2" class="size-check") S
+                            input(type="radio", id="m2", name="size")
+                            label(for="m2" class="size-check label-size-none") M
+                            input(type="radio", id="l2", name="size")
+                            label(for="l2" class="size-check label-size-none") L
+                            input(type="radio", id="xl2", name="size")
+                            label(for="xl2" class="size-check label-size-none") XL
+                    li.order-item
+                        img.flower-img(src="/images/flower3.png", alt="Корзина Raccoon Flowers")
+                        .flower-description
+                            p.flower-title TO THE MOON AND BACK
+                            p.flower-text Сhoose a beautiful and comfortable coat
+                            p.flower-price <span>7 500</span> рублей
+                            input(type="radio", id="s3", name="size1")
+                            label(for="s3" class="size-check") S
+                            input(type="radio", id="m3", name="size1")
+                            label(for="m3" class="size-check label-size-none") M
+                            input(type="radio", id="l3", name="size1")
+                            label(for="l3" class="size-check label-size-none") L
+                            input(type="radio", id="xl3", name="size1")
+                            label(for="xl3" class="size-check label-size-none") XL     
+                a.checkout(href="#") Оформить заказ
             .search-block
                 .container
                     .search-wrapp
@@ -75,7 +108,7 @@ html(lang="ru")
                     input(type="email", name="email", placeholder="Ваш email")
                     button.subscribe-send Подписаться
                 .footer-main-info
-                    img.phone(src="/images/phone.png")
+                    img.phone(src="/images/phone1.png")
                     a.footer-phone(href="tel:88003507457") 8 (800) 350 7457
                     img.messenger(src="/images/messenger.png")
                     a.footer-phone(href="tel:+79312715782") +7 (931) 271-57-82
@@ -131,6 +164,7 @@ html(lang="ru")
 
         if env.NODE_ENV == 'development'
             script(src="/jquery/jquery.min.js")
+            script(src="/src/js/public/jquery.nicescroll.min.js")
             script(src="/src/js/public/app.js")
         else
             script(src='/app-ba92d7cc8b.min.js')
