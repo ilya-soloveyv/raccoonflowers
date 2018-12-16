@@ -1,0 +1,92 @@
+extends ../app
+
+block main
+
+  .order-wrapper
+    .container
+      form.order-form
+        .order-points(action="#")        
+          .order-point.order-point_title
+            img(src="/images/flower1.png", alt="Букет")
+            .order-desc
+              p.flower-name To the moon and back
+              p.flower-desc Сhoose a beautiful and<br> comfortable coat
+              p.flower-size Размер: <span class="choise-size">M</span>
+              p.flower-price 7 500 рублей
+          .order-point.order-point_youcontacts
+            h2.order-subtitle.order-subtitle_youcontacts Ваши контактные данные
+            input.order-input(type="text" name="your_name" placeholder="Ваше имя")
+            input.order-input(type="tel" name="your_tel" placeholder="Ваш телефон")
+            input.order-input(type="email" name="your_mail" placeholder="Ваш email")
+          .order-point.order-point_datatime
+            h2.order-subtitle.order-subtitle_datatime Дата и время доставки
+            .data-choise Выберите дату: <input class="input-data" id="demo-desktop" data-input-style="box" placeholder="Please Select...">
+            .time-wrapper 
+              .time-fix
+                input(type="radio", id="from9to11", name="size")
+                label(for="from9to11" class="size-check") с 9 до 11 ч.     
+                input(type="radio", id="from11to13", name="size")
+                label(for="from11to13" class="size-check") с 11 до 13 ч.
+                input(type="radio", id="from13to15", name="size")
+                label(for="from13to15" class="size-check") с 13 до 15 ч.
+                input(type="radio", id="from15to18", name="size")
+                label(for="from15to18" class="size-check") с 15 до 18 ч.
+                input(type="radio", id="from18to21", name="size")
+                label(for="from18to21" class="size-check") с 18 до 21 ч.
+                input(type="radio", id="from21to23", name="size")
+                label(for="from21to23" class="size-check") с 21 до 23 ч.
+              .time-choise
+                input(type="radio", id="day", name="size")
+                label(for="day" class="size-check") Доставка к точному времени
+                p.time-cost +500 рублей
+                p.time-desc Точность доставки в пределах 15 минут
+                input(type="radio", id="night", name="size")
+                label(for="night" class="size-check") Доставка ночью
+                p.time-cost +700 рублей
+                p.time-desc Точность доставки в пределах 15 минут
+                input#demo-responsive-time(placeholder="Выберите время")
+          .order-point.order-point_adress
+            h2.order-subtitle.order-subtitle_adress Адрес доставки
+            .city-adress
+              span.city Город:
+              .select-wrapper
+                .select-arrow
+                .select-arrow
+                select
+                  option(value="new") Москва
+                  option(value="popular") Сочи
+                  option(value="lowcost") Краснодар
+                  option(value="heightcost") Владивосток
+            input(type="checkbox", id="call-back", name="call-back")
+            label(for="call-back" class="size-check") Уточнить адрес у получателя
+            input.street(type="text" name="street" placeholder="Улица")
+            input.house(type="text" name="house" placeholder="Дом")
+            input.house(type="text" name="corpuse" placeholder="Корпус")
+            input.house(type="text" name="flat" placeholder="Квартира")
+            textarea.comment(name="comment" placeholder="Комментарий")
+            button.change Изменить
+          .order-point.order-point_recipient
+            h2.order-subtitle.order-subtitle_recipient Контактные данные получателя
+            input(type="text" name="name-recipient" placeholder="Имя")
+            input(type="tel" name="tel-recipient" placeholder="Номер телефона")
+            input(type="checkbox", id="recipient", name="recipient")
+            label(for="recipient" class="size-check") Я являюсь получателем
+            input(type="checkbox", id="dont_call", name="recipient")            
+            label(for="dont_call" class="size-check") Не связываться с получателем для уточнения удобного времени
+            p Во время звонка наш оператор не раскроет имя отпраителя
+            input(type="checkbox", id="dont_name", name="recipient")
+            label(for="dont_name" class="size-check") Сохранить ваше имя в тайне
+            p Во время звонка наш оператор не раскроет имя отпраителя
+          .order-point.order-point_postcard
+            h2.order-subtitle.order-subtitle_postcard Текст открытки
+            .postcard 
+              p.postcard-text I Love You
+              img.postcard-logo(src="/images/logo.svg", alt="Логотип Raccoon Flowers")
+            input(type="checkbox", id="put", name="put_postcard")
+            label(for="put" class="size-check") Вложить открытку без подписи
+        button.send-order Отправить заказ
+      p.before-pay Перед оплатой букета наш менеджер свяжется с вами и подтвердит наличие выбранных цветов или предложит равноценную замену
+
+
+
+        

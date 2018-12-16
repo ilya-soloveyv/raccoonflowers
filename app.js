@@ -88,6 +88,11 @@ app.get('/bucket', (req, res) => {
         title: 'Корзина'
     })
 })
+app.get('/order', (req, res) => {
+    res.render('public/order/order', {
+        title: 'Заказ'
+    })
+})
 
 app.get('/catalog/:uri', (req, res) => {
     Bouquet.where({ uri: req.params.uri }).populate('flower').findOne((err, bouquet) => {

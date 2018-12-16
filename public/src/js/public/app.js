@@ -65,11 +65,49 @@ $(document).ready(function () {
   if (document.documentElement.clientWidth < 992) {    
     $('.size-check').click(function () {
       $('.slide-size').fadeToggle();
+    });    
+  }
+
+  if (document.documentElement.clientWidth < 576) {
+    $('.title-info').click(function () {
+      $(this).next('.list-info').slideToggle();
     });
   }
-  
-  $('.title-info').click(function () {
-    $(this).next('.list-info').slideToggle();
+
+  mobiscroll.settings = {
+    lang: 'ru',
+    theme: 'ios'
+  };
+
+  $(function () {    
+
+    $('#demo-desktop').mobiscroll().calendar({
+      display: 'bubble',
+      dateFormat: 'd MM',
+      onInit: function (event, inst) {
+        inst.setVal(new Date(), true);
+      }      
+    });
+
+    $('#demo-responsive-time').mobiscroll().time({
+      responsive: {
+        small: {
+          display: 'bubble'
+        },
+        medium: {
+          touchUi: false
+        }
+      },
+      onInit: function (event, inst) {
+        inst.setVal(new Date(), true);
+      }
+    });
   });
+
+
+
+  
+  
+  
   
 });
