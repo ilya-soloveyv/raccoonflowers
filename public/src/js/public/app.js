@@ -5,14 +5,14 @@ $(document).ready(function () {
   $('.search').click(function(){
     $('.search-block').slideToggle();
   });
+
+  $('.search-block .search-icon').click(function () {
+    $('.search-field').fadeToggle();
+  });
   
   $('.search-close').click(function () {
     $('.search-block').slideUp();
-  });
-
-  $('.search-wrapp_mobile img').click(function () {
-    $('.search-field').toggleClass('active');
-  });
+  });  
 
   $('.burger').click(function () {
     $('.nav-menu').addClass('nav-menu_active');
@@ -68,6 +68,8 @@ $(document).ready(function () {
     });
   }
   
-
+  $('.title-info').click(function () {
+    $(this).next('.list-info').slideToggle();
+  });
   
 });

@@ -47,6 +47,7 @@ html(lang="ru")
             .search-block
                 .container
                     .search-wrapp
+                        img.search-icon(src="/images/search.png", alt="Иконка поиска")
                         input.search-field#search-field(type="text", name="search", placeholder="Поиск")
                         label(for="search-field")
                             img.search-icon-input(src="/images/search-input.png", alt="Иконка поиска")
@@ -69,13 +70,7 @@ html(lang="ru")
                                 a.sign-link(href="#") Вход
                                 span /
                                 a.sign-link(href="#") Регистрация
-                            img.bucket(src="/images/bucket.png", alt="Корзина Raccoon Flowers")
-            .search-block_mobile
-                .container
-                    .search-wrapp_mobile
-                        img.search-icon(src="/images/search.png", alt="Иконка поиска")
-                        input.search-field#search-field(type="text", name="search", placeholder="Поиск")
-                
+                            img.bucket(src="/images/bucket.png", alt="Корзина Raccoon Flowers")                           
             .nav-menu
                 .container
                     nav
@@ -103,64 +98,61 @@ html(lang="ru")
 
         footer.footer
             .container
-                h6.title-info_mobile Подписывайтесь на нас
-                form.subscribe_mobile                        
-                    input(type="email", name="email", placeholder="Ваш email")
-                    button.subscribe-send Подписаться
-                .footer-main-info
-                    img.phone(src="/images/phone1.png")
-                    a.footer-phone(href="tel:88003507457") 8 (800) 350 7457
-                    img.messenger(src="/images/messenger.png")
-                    a.footer-phone(href="tel:+79312715782") +7 (931) 271-57-82
-                    .footer-social
-                        a.footer-social_link(href="#")
-                            img(src="/images/whatsapp.png")
-                        a.footer-social_link(href="#")
-                            img(src="/images/viber.png")
-                        a.footer-social_link(href="#")
-                            img(src="/images/telegram.png")
-                .footer-all-info
-                    ul.footer-info-text
-                        li.footer-info-text_item
-                            h6.title-info Racconflowers.com
-                        li.footer-info-text_item
-                            h6.title-info О нас
-                            ul.list-info
-                                li.list-info_item
-                                    a.list-info_link(href="#") О компания
-                                li.list-info_item
-                                    a.list-info_link(href="#") FAQs
-                                li.list-info_item
-                                    a.list-info_link(href="#") Сотрудничество
-                                li.list-info_item
-                                    a.list-info_link(href="#") Связаться с нами
-                        li.footer-info-text_item                        
-                            h6.title-info Сервис
-                            ul.list-info
-                                li.list-info_item
-                                    a.list-info_link(href="#") Доставка
-                                li.list-info_item
-                                    a.list-info_link(href="#") Оплата
-                                li.list-info_item
-                                    a.list-info_link(href="#") Возврат
-                                li.list-info_item
-                                    a.list-info_link(href="#") Консьерж-сервис
-                                li.list-info_item
-                                    a.list-info_link(href="#") Подарочные карты
-                                li.list-info_item
-                                    a.list-info_link(href="#") Программа лояльности
-                        li.footer-info-text_item
-                            h6.title-info Информация
-                            ul.list-info
-                                li.list-info_item
-                                    a.list-info_link(href="#") Политика<br> конфиденциальности
-                    form.subscribe
-                        h6.title-info Подписывайтесь на нас
-                        input(type="email", name="email", placeholder="Ваш email")
-                        button.subscribe-send Подписаться
-                .footer-logo
-                    a.logo-link(href="/")
-                        img.logo-img(src="/images/logo.svg", alt="Логотип Raccoon Flowers")
+                .footer-wrapper
+                    .footer-main-info
+                        img.phone(src="/images/phone1.png")
+                        a.footer-phone(href="tel:88003507457") 8 (800) 350 7457
+                        img.messenger(src="/images/messenger.png")
+                        a.footer-phone(href="tel:+79312715782") +7 (931) 271-57-82
+                        .footer-social
+                            a.footer-social_link(href="#")
+                                img(src="/images/whatsapp.png")
+                            a.footer-social_link(href="#")
+                                img(src="/images/viber.png")
+                            a.footer-social_link(href="#")
+                                img(src="/images/telegram.png")
+                    .footer-all-info
+                        ul.footer-info-text
+                            li.footer-info-text_item
+                                h6.title-info Racconflowers.com
+                            li.footer-info-text_item
+                                h6.title-info О нас
+                                ul.list-info
+                                    li.list-info_item
+                                        a.list-info_link(href="#") О компания
+                                    li.list-info_item
+                                        a.list-info_link(href="#") FAQs
+                                    li.list-info_item
+                                        a.list-info_link(href="#") Сотрудничество
+                                    li.list-info_item
+                                        a.list-info_link(href="#") Связаться с нами
+                            li.footer-info-text_item                        
+                                h6.title-info Сервис
+                                ul.list-info
+                                    li.list-info_item
+                                        a.list-info_link(href="#") Доставка
+                                    li.list-info_item
+                                        a.list-info_link(href="#") Оплата
+                                    li.list-info_item
+                                        a.list-info_link(href="#") Возврат
+                                    li.list-info_item
+                                        a.list-info_link(href="#") Консьерж-сервис
+                                    li.list-info_item
+                                        a.list-info_link(href="#") Подарочные карты
+                                    li.list-info_item
+                                        a.list-info_link(href="#") Программа лояльности
+                            li.footer-info-text_item
+                                h6.title-info Информация
+                                ul.list-info
+                                    li.list-info_item
+                                        a.list-info_link(href="#") Политика<br> конфиденциальности
+                        form.subscribe
+                            h6.title-info Подписывайтесь на нас
+                            input(type="email", name="email", placeholder="Ваш email")
+                            button.subscribe-send Подписаться
+                    .footer-logo
+                        a.logo-link(href="/")
+                            img.logo-img(src="/images/logo.svg", alt="Логотип Raccoon Flowers")
 
         if env.NODE_ENV == 'development'
             script(src="/jquery/jquery.min.js")
