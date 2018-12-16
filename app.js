@@ -88,9 +88,22 @@ app.get('/bucket', (req, res) => {
         title: 'Корзина'
     })
 })
+
 app.get('/order', (req, res) => {
     res.render('public/order/order', {
         title: 'Заказ'
+    })
+})
+
+app.get('/info', (req, res) => {
+    res.render('public/info/info', {
+        title: 'Информация'
+    })
+})
+
+app.get('/registration', (req, res) => {
+    res.render('public/registration/registration', {
+        title: 'Вход/Регистрация'
     })
 })
 

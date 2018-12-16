@@ -1788,6 +1788,116 @@ input[type='radio'] {
     .before-pay {
       display: none; } }
 
+.info-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 110px; }
+  @media screen and (max-width: 576px) {
+    .info-wrapper {
+      padding-top: 50px; } }
+  .info-wrapper .sidebar-info {
+    width: 20%; }
+    .info-wrapper .sidebar-info .title-info {
+      font-size: 11px;
+      text-transform: uppercase;
+      margin-bottom: 53px; }
+    @media screen and (max-width: 576px) {
+      .info-wrapper .sidebar-info {
+        display: none; } }
+  .info-wrapper .info-main {
+    width: 75%;
+    font-size: 13px;
+    color: #707070; }
+    @media screen and (max-width: 576px) {
+      .info-wrapper .info-main {
+        width: 100%; } }
+    .info-wrapper .info-main .info-title {
+      margin-bottom: 10px; }
+    .info-wrapper .info-main .info-desc {
+      margin-bottom: 10px; }
+    .info-wrapper .info-main .info-item {
+      margin-bottom: 5px; }
+  .info-wrapper .footer-info-text {
+    display: block; }
+  .info-wrapper .footer-info-text_item {
+    margin-bottom: 54px; }
+  .info-wrapper .list-info_item {
+    margin-bottom: 8px; }
+  .info-wrapper .list-info_link {
+    font-size: 12px;
+    color: #707070; }
+
+.reg-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding-top: 150px; }
+  @media screen and (max-width: 768px) {
+    .reg-wrapper {
+      flex-direction: column;
+      justify-content: center; } }
+  @media screen and (max-width: 576px) {
+    .reg-wrapper {
+      padding-top: 50px; } }
+  .reg-wrapper .form-sign {
+    width: 35%; }
+    @media screen and (max-width: 1200px) {
+      .reg-wrapper .form-sign {
+        width: 45%; } }
+    @media screen and (max-width: 768px) {
+      .reg-wrapper .form-sign {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 100px; } }
+    @media screen and (max-width: 576px) {
+      .reg-wrapper .form-sign {
+        width: 100%; } }
+    .reg-wrapper .form-sign .reg-label {
+      text-transform: uppercase;
+      color: #707070;
+      margin-bottom: 25px;
+      display: block; }
+    .reg-wrapper .form-sign .reg-input {
+      padding: 13px 0;
+      padding-left: 50px;
+      width: 80%;
+      border: 1px solid #D3D3D3;
+      display: block;
+      margin-bottom: 25px; }
+      @media screen and (max-width: 576px) {
+        .reg-wrapper .form-sign .reg-input {
+          width: 100%; } }
+    .reg-wrapper .form-sign .forget {
+      color: #707070;
+      display: block;
+      width: 25%;
+      margin-left: auto;
+      text-align: right;
+      text-decoration: underline; }
+      @media screen and (max-width: 1200px) {
+        .reg-wrapper .form-sign .forget {
+          width: 45%; } }
+    .reg-wrapper .form-sign .reg-btn {
+      padding: 13px 0;
+      border: 1px solid #CFBC9E;
+      background: #CFBC9E;
+      display: block;
+      width: 40%;
+      text-transform: uppercase;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 60px; }
+      @media screen and (max-width: 992px) {
+        .reg-wrapper .form-sign .reg-btn {
+          width: 60%; } }
+      @media screen and (max-width: 576px) {
+        .reg-wrapper .form-sign .reg-btn {
+          width: 100%; } }
+      .reg-wrapper .form-sign .reg-btn:hover {
+        background: transparent;
+        color: #CFBC9E; }
+
 body {
   font-family: 'Gill Sans';
   font-size: 12px;
