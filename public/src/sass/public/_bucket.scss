@@ -257,22 +257,36 @@ $grey: #707070;
   }
 }
 
+
+// CONTINUE BUY SECTION
+
+
 .continue-buy {
-  padding-top: 115px;
-  display: flex;
-  justify-content: space-between;
+  padding-top: 115px;  
   @media screen and (max-width:768px) {
     padding-top: 20px;
     flex-direction: column;            
   }  
 }
 
+.promo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  @media screen and (max-width:576px) {
+    flex-direction: column;           
+  }
+}
+
 .promo-code {
   display: flex; 
   align-items: center;
-  
+  width: 45%;
+  @media screen and (max-width:576px) {
+    width: 100%;          
+  }
   input {
-    width: 360px;
+    width: 65%;
     padding: 11px 15px;
     font-size: 11px;
     color: $m-color;
@@ -290,7 +304,10 @@ $grey: #707070;
       height: 34px;          
     }
     @media screen and (max-width:768px) {
-      width: 100%;            
+      width: 64%;            
+    }
+    @media screen and (max-width:576px) {
+      width: 75%;           
     }    
   }  
   .send-promocode {
@@ -318,54 +335,18 @@ $grey: #707070;
       height: 34px;      
       display: inline-block;        
     }
-    @media screen and (max-width:768px) {
-      display: none;            
-    }  
-  }
-}
-
-.back-to-shop {
-  width: 360px;
-  border: 1px solid $grey;
-  padding: 10px 35px;
-  background: transparent;
-  color: $grey;
-  margin-top: 180px;
-  cursor: pointer;
-  transition: all .3s;
-  text-transform: uppercase;
-  font-size: 13px;
-  &:hover {
-    color: #fff;
-    background: $grey;
-  }
-  @media screen and (max-width:992px) {
-    font-size: 7px;
-    width: 75%;
-    margin-top: 100px;       
-  }
-  @media screen and (max-width:768px) {
-    display: none;           
-  }
-  &_mobile {
-    display: none;
-    @media screen and (max-width:768px) {
-      display: inline-block;
-      width: 40vw;
-      border: 1px solid $grey;
-      background: transparent;
-      font-size: 7px;
-      text-transform: uppercase;
-      padding: 10px 0;
-      margin-right: 5vw;        
+    @media screen and (max-width:576px) {
+      width: 25%;           
     }
   }
 }
-
 .all-cost {
-  width: 35%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 130px;
   @media screen and (max-width:1200px) {
-    width: 40%;               
+                   
   }
   @media screen and (max-width:768px) {
     width: 100%;
@@ -375,7 +356,15 @@ $grey: #707070;
 
 .calc {
   display: flex;  
-  justify-content: space-around;
+  justify-content: space-between;
+  width: 40%;
+  @media screen and (max-width:768px) {
+    width: 45%;       
+  }
+  @media screen and (max-width:576px) {
+    width: 75%;
+    padding-top: 20px;          
+  }
   &-text {
     text-transform: uppercase;
     font-size: 11px;
@@ -396,7 +385,12 @@ $grey: #707070;
       @media screen and (max-width:992px) {
         font-size: 8px;      
       }
-    }
+      &:first-child {
+        @media screen and (max-width:576px) {
+          display: none;           
+        }
+      }
+    }    
   }
   &-cost {
     font-size: 14px;
@@ -405,6 +399,11 @@ $grey: #707070;
     @media screen and (max-width:992px) {
       font-size: 11px;
       margin-bottom: 12px;      
+    }
+    &:first-child {
+      @media screen and (max-width:576px) {
+        display: none;           
+      }
     }
     span {
       text-transform: uppercase;
@@ -432,16 +431,42 @@ $grey: #707070;
   }
 }
 
-.continue-order {
-  margin-left: auto;
+.back-to-shop {
+  width: 25%;
+  border: 1px solid $grey;
+  padding: 10px 35px;
+  background: transparent;
+  color: $grey;  
+  cursor: pointer;
+  transition: all .3s;
+  text-transform: uppercase;
+  font-size: 13px;
+  &:hover {
+    color: #fff;
+    background: $grey;
+  }
+  @media screen and (max-width:1200px) {
+    width: 35%;            
+  }
+  @media screen and (max-width:992px) {
+    font-size: 7px;
+    width: 30%;
+           
+  }
+  @media screen and (max-width:576px) {
+     width: 45%;
+     padding: 10px 0;         
+  }  
+}
+
+.continue-order {  
   display: block;
   padding: 10px 0;
   background: $grey;
   color: #fff;
   text-transform: uppercase;
   border: 1px solid $grey;
-  width: 70%;
-  margin-top: 142px;
+  width: 25%;  
   font-size: 13px;
   transition: all .3s;
   cursor: pointer;
@@ -449,13 +474,15 @@ $grey: #707070;
     background: transparent;
     color: $grey;
   }
+  @media screen and (max-width:1200px) {
+      width: 35%;            
+  }
   @media screen and (max-width:992px) {
     font-size: 7px;
-    width: 75%;
-    margin-top: 58px;       
+    width: 30%;          
   }
-  @media screen and (max-width:768px) {
-    width: 51vw;
-    display: inline-block;           
+  @media screen and (max-width:576px) {
+     width: 52%;
+     padding: 10px 0;         
   }
 }

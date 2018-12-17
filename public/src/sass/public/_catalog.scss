@@ -422,14 +422,22 @@ input[type='radio'] {
 }
 
 .catalog-picture {
-  height: 600px;
+  height: 33vw;
   border: 1px solid $grey;
   position: relative;
+  display: flex;
+  align-items: center;
   @media screen and (max-width:1200px) {
-    height: 400px;
+    height: 35vw;
+  }
+  @media screen and (max-width:992px) {
+    height: 50vw;
   }
   @media screen and (max-width:576px) {
-      height: 280px;
+    height: 67vw;
+  }
+  .picture-img {
+    width: 100%;
   }
 }
 

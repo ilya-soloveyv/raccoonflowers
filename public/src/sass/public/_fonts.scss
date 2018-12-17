@@ -107,3 +107,33 @@
   font-style: normal;
 }
 
+
+@font-face {
+  font-family: 'velocity_demo';
+  src: url('/fonts/VelocityDEMORegular.eot');
+  /* IE9 Compat Modes */
+  src: url('/fonts/VelocityDEMORegular.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('/fonts/VelocityDEMORegular.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('/fonts/VelocityDEMORegular.woff') format('woff'),
+    /* Pretty Modern Browsers */
+    url('/fonts/velocity_demo.ttf') format('truetype'),
+    /* Safari, Android, iOS */
+    url('/fonts/VelocityDEMORegular.svg#GillSans') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'icons_mobiscroll';  
+  src:    
+    /* Super Modern Browsers */
+    url('/fonts/icons_mobiscroll.woff') format('woff'),
+    /* Pretty Modern Browsers */
+    url('/fonts/icons_mobiscroll.ttf') format('truetype'),
+    
+  
+}
+

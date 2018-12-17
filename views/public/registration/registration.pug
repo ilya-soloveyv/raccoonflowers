@@ -1,0 +1,23 @@
+extends ../app
+
+block main
+
+  .container
+    .reg-wrapper
+      form.form-sign
+        label.reg-label(for="login") Логин
+        input.reg-input(id="login" placeholder="Ваш email или номер телефона")
+        label.reg-label(for="pass") Пароль
+        input.reg-input(id="pass" placeholder="Введите пароль")
+        a.forget(href="#") Забыли пароль?
+        button.reg-btn Войти        
+      form.form-sign
+        label.reg-label(for="name") Имя
+        input.reg-input(id="name" placeholder="Введите имя")
+        label.reg-label(for="tel") Номер телефона
+        input.reg-input(id="tel" placeholder="Введите телефон")
+        label.reg-label(for="mail") Email
+        input.reg-input(id="mail" placeholder="Введите email")
+        label.reg-label(for="pass") Пароль
+        input.reg-input(id="pass" placeholder="Введите пароль")
+        button.reg-btn Зарегистрироваться

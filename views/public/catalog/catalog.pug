@@ -119,7 +119,8 @@ block main
                     ul.catalog-list
                         each bouquet in bouquets.docs
                             li.catalog-item
-                                .catalog-picture                                    
+                                .catalog-picture
+                                    img.picture-img(src="/images/flower-big.png")
                                     img.elect(src="/images/star.png")
                                 
                                 a.title-link(href="/catalog/"+bouquet.uri) #{bouquet.title}
