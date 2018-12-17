@@ -1,5 +1,88 @@
 extends ../app
 
 block main
-    .container-fluid
-        h1 Raccoon Flowers
+    
+    .welcome-wrapper
+        .container
+            .offer
+            .offer-desc
+    .paralax-wrapper
+    .paralax-desc 
+        p.main-title To the moon and back
+        p.main-text Discover the women’s ready-to-wear pieces and accessories from the fall-winter 2018 collection.
+        a.main-look(href="#") Смотреть <span>›</span>        
+    .present-wrapper
+        .container
+            .container-small
+                .present-flower
+                    .photo-big                        
+                    .photo-small
+                    .present-desc
+                        p.main-title To the moon and back
+                        p.main-text Discover the women’s ready-to-wear pieces and accessories from the fall-winter 2018 collection.
+                        a.main-look(href="#") Смотреть <span>›</span> 
+                .present-bouquet            
+                .catalog-wrapp
+                    ul.catalog-list                    
+                        li.catalog-item
+                            .catalog-picture
+                                img.picture-img(src="/images/flower-big.png")
+                                img.elect(src="/images/star.png")
+                            a.title-link(href="/catalog") Black and White flower
+                            p.catalog-item_text Сhoose a beautiful and comfortable coat
+                            p.catalog-item_price 7 500 рублей
+                            button.more Подробнее
+                        li.catalog-item
+                            .catalog-picture
+                                img.picture-img(src="/images/flower-big.png")
+                                img.elect(src="/images/star.png")
+                            a.title-link(href="/catalog") Black and White flower
+                            p.catalog-item_text Сhoose a beautiful and comfortable coat
+                            p.catalog-item_price 7 500 рублей
+                            button.more Подробнее
+                        li.catalog-item
+                            .catalog-picture
+                                img.picture-img(src="/images/flower-big.png")
+                                img.elect(src="/images/star.png")
+                            a.title-link(href="/catalog") Black and White flower
+                            p.catalog-item_text Сhoose a beautiful and comfortable coat
+                            p.catalog-item_price 7 500 рублей
+                            button.more Подробнее
+                .history
+                    .shop
+                        img(src="/images/shop.png")
+                    p.history-text Букет из лизиантуса, эвкалипта и английских пионовидных роз David Austin Patience назван так не спроста! Он не только красив как до луны и обратно, но, и собран согласно последним флористическим трендами - в раскидистой технике в форме полумесяца. Букет из лизиантуса, эвкалипта и английских пионовидных роз David Austin Patience назван так не спроста! Он не только красив как до луны и обратно, но, и собран согласно последним флористическим трендами - в раскидистой технике в форме полумесяца. Букет из лизиантуса, эвкалипта и английских пионовидных роз David Austin Patience назван так не спроста! Он не только красив как до луны и обратно, но, и собран согласно последним флористическим трендами - в раскидистой технике в форме полумесяца.
+                .advantages
+                    h3.advantages-title Наши преимущества
+                    ul.advantages-list
+                        li.advantages-item
+                            img(src="/images/advant1.jpg")
+                            p.advantages-text Бесплатная доставка
+                        li.advantages-item
+                            img(src="/images/advant2.jpg")
+                            p.advantages-text Фотоконтроль
+                        li.advantages-item
+                            img(src="/images/advant3.jpg")
+                            p.advantages-text Стильная упаковка
+                .bouquet-slider
+                    .bouquet-slider_title
+                        img.logo-img(src="/images/logo.svg", alt="Логотип Raccoon Flowers")
+                        span Pop
+                    .owl-carousel.owl-theme.bouquet-slider_wrapp
+                        .bouquet-slider_item
+                            p.flower-title TO THE MOON AND BACK
+                            p.flower-text Сhoose a beautiful and comfortable coat
+                            p.flower-price <span>7 500</span> рублей
+                            img(src="/images/flower-big.png", alt="Букет")
+                        .bouquet-slider_item
+                            p.flower-title TO THE MOON AND BACK
+                            p.flower-text Сhoose a beautiful and comfortable coat
+                            p.flower-price <span>7 500</span> рублей
+                            img(src="/images/flower-big.png", alt="Букет")
+                        .bouquet-slider_item
+                            p.flower-title TO THE MOON AND BACK
+                            p.flower-text Сhoose a beautiful and comfortable coat
+                            p.flower-price <span>7 500</span> рублей
+                            img(src="/images/flower-big.png", alt="Букет")
+                    p.youshow
+                    a.show-more(href="/catalog") Смотреть
