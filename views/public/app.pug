@@ -6,6 +6,8 @@ html(lang="ru")
         title= title
         if env.NODE_ENV == 'development'
             link(rel="stylesheet", href="/src/css/public/mobiscroll.jquery.min.css")
+            link(rel="stylesheet", href="/src/css/public/owl.carousel.min.css")
+            link(rel="stylesheet", href="/src/css/public/owl.theme.default.min.css")
             link(rel="stylesheet", href="/src/css/public/app.css")
         else
             link(rel="stylesheet", href="/app-c619a72245.min.css")
@@ -159,6 +161,7 @@ html(lang="ru")
             script(src="/jquery/jquery.min.js")
             script(src="/src/js/public/jquery.nicescroll.min.js")
             script(src="/src/js/public/mobiscroll.jquery.min.js")
+            script(src="/src/js/public/owl.carousel.min.js")
             script(src="/src/js/public/app.js")
         else
             script(src='/app-ba92d7cc8b.min.js')
