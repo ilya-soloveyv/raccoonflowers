@@ -50,7 +50,10 @@ gulp.task('js_min', () => {
 gulp.task('css_min', () => {
     return gulp
         .src([            
-            'public/src/css/public/app.css'            
+            'public/src/css_static/mobiscroll.jquery.min.css',
+            'public/src/css_static/owl.carousel.min.css',
+            'public/src/css_static/owl.theme.default.min.css',
+            'public/src/css/public/app.css'
         ], { allowEmpty: true })
         .pipe(concat('app.min.css'))
         .pipe(cleanCSS())
