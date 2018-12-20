@@ -2,6 +2,12 @@
 
 // console.log('2 строка')
 $(document).ready(function () {
+  $(window).on('load', function () {
+    var $preloader = $('.preloader');      
+    $preloader.delay(450).fadeOut(700);
+  });
+
+
   $('.search').click(function(){
     $('.search-block').slideToggle();
   });
@@ -16,19 +22,20 @@ $(document).ready(function () {
 
   $('.burger').click(function () {
     $('.nav-menu').addClass('nav-menu_active');
-    $('.overlay').show("100");    
+    $('.overlay').fadeIn(100);    
   });
 
   $('.menu-close').click(function () {
     $('.nav-menu').removeClass('nav-menu_active');
-    $('.overlay').hide("100");
+    $('.overlay').fadeOut(100);
   });
 
   $('.overlay').click(function () {
     $('.nav-menu').removeClass('nav-menu_active');
-    $(this).hide("100");
+    $(this).fadeOut(100);
     $('.sidebar').removeClass('sidebar_active');
     $('.bucket-menu').removeClass('bucket-menu_active');
+    $('.popup-bouquet').fadeOut(50);
   });
 
   $('.filter-title').click(function () {
@@ -37,18 +44,24 @@ $(document).ready(function () {
 
   $('.burger-filter').click(function () {
     $('.sidebar').addClass('sidebar_active');
-    $('.overlay').show("100");
+    $('.overlay').fadeIn(100);
   });
 
   $('.sidebar-close').click(function () {
     $('.sidebar').removeClass('sidebar_active');
-    $('.overlay').hide("100");
+    $('.overlay').fadeOut(100);
   });
 
   $('.bucket').click(function () {
     $('.bucket-menu').addClass('bucket-menu_active');
-    $('.overlay').show("100");
+    $('.overlay').fadeIn(100);
   });
+  
+  $('.catalog-picture').click(function () {
+    $('.popup-bouquet').fadeIn(200);
+    $('.overlay').fadeIn(100);
+  });
+
 
   $('.more-info').click(function () {    
     $('.desc-text').slideToggle();
@@ -104,14 +117,31 @@ $(document).ready(function () {
     });
   });
 
-  $(".owl-carousel").owlCarousel({
+  $(".owl-carousel.bouquet-slider_wrapp").owlCarousel({
     loop: true,
     nav: true,
     items: 1,
     dots: false
   });
 
-  
+  $(".owl-carousel.main-list").owlCarousel({
+    loop: true,
+    nav: false,
+    items: 2,
+    dots: true,
+    smartSpeed: 1000,
+    responsive: { 
+      0: {
+        items: 1
+      },
+      576: {
+        items: 1
+      },
+      992: {
+        items: 2
+      }
+    }
+  }); 
   
   
   

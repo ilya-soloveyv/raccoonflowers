@@ -100,6 +100,16 @@ app.get('/info', (req, res) => {
         title: 'Информация'
     })
 })
+app.get('/thanks', (req, res) => {
+    res.render('public/info/thanks', {
+        title: 'Спасибо!'
+    })
+})
+app.get('/404', (req, res) => {
+    res.render('public/info/404', {
+        title: 'Не найдено'
+    })
+})
 
 app.get('/registration', (req, res) => {
     res.render('public/registration/registration', {
