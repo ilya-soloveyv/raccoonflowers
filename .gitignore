@@ -3,3 +3,4 @@
 /.env
 /encryption
 /config/keys.js
+/public/src/css
