@@ -7,6 +7,7 @@
 @import 'order';
 @import 'info';
 @import 'reg';
+@import 'thanks';
 
 
 
@@ -86,8 +87,9 @@ button, button:hover, button:focus, button:active {
     top: 0;
     right: 0;
     width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.2);
+    height: 100%;
+    background: #000;
+    opacity: 0.3;
     z-index: 90;
     display: none;
 }
@@ -663,5 +665,144 @@ button, button:hover, button:focus, button:active {
         .logo-img {
             max-height: 45px;
         }
+    }
+}
+
+
+// POP UP Catalog
+
+.popup-bouquet {
+    opacity: 1;
+    display: none;
+}
+
+.bouquet-wrapp {
+    position: fixed;
+    width: 90%;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 100;
+    background: #fff;
+    display: flex;   
+    align-items: center;
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        padding: 20px;			
+    }
+    .flower-title {
+            text-transform: uppercase;
+            font-size: 14px;
+            margin-bottom: 10px;
+            @media screen and (max-width: 576px) {
+                text-align: center;
+                margin-top: 15px;			
+            }
+        }
+        .flower-text {
+            font-size: 13px;
+            font-family: 'Baskerville';
+            margin-bottom: 23px;
+            @media screen and (max-width: 576px) {
+                text-align: center;			
+            }
+        }
+        .flower-price {
+            span {
+                font-style: italic;
+                font-family: 'Baskerville';
+                font-size: 17px;
+            }
+            font-family: 'Helvetica Neue';
+            font-size: 12px;
+            margin-bottom: 50px;
+            @media screen and (max-width: 576px) {
+                text-align: center;
+                margin-bottom: 20px;			
+            }
+        }
+        label {
+            width: 25px;
+            height: 25px;
+            background: transparent;  
+            color: $m-color;
+            border-radius: 50%;
+            line-height: 25px;
+            font-size: 13px;
+            display: inline-block;
+            text-align: center;
+            margin: 0 13px;
+            transition: all .3s;
+            cursor: pointer;
+            outline: none;            
+        }
+        input[type='radio'] {
+            &:checked {
+                &+label {
+                    background: $m-color;
+                    color: #fff;                
+                }
+            }
+        }
+    .bouquet-slider_wrapp {
+        background: #E4E4E4;
+        margin: 0;
+        margin-left: 10%;
+        height: 100%;
+        width: 50%;
+        @media screen and (max-width: 768px) {
+            margin-left: 0;	
+            width: 47vw;
+            background: none;		
+        }
+        @media screen and (max-width: 576px) {
+            margin-left: 0;	
+            width: 60vw;		
+        }
+        .owl-carousel .owl-stage-outer {
+            height: 100%;
+        }
+    }
+    .no-js .owl-carousel, .owl-carousel.owl-loaded {
+        display: flex;
+        align-items: center;
+    }
+
+    .flower-description {
+        margin: 0 auto;
+        text-align: center;
+    }
+    .popup-link {
+        width: 200px;
+        display: block;
+        margin: 0 auto;
+        margin-top: 25px;
+        border: 1px solid $m-color;
+        padding: 13px 0;
+        font-size: 14px;
+        color: #fff;
+        background: $m-color;
+    }
+}
+
+//  Preloader
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 1;        
+    width: 100%;
+    height: 100vh;
+    z-index: 999999;
+    background: #fff;    
+    img {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+
     }
 }

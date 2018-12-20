@@ -12,6 +12,8 @@ html(lang="ru")
         else
             link(rel="stylesheet", href="/app-c619a72245.min.css")
     body
+        .preloader
+                img(src="/images/preloader.png", alt="Raccoon")
         header.header
             .overlay
             .bucket-menu
@@ -156,6 +158,28 @@ html(lang="ru")
                     .footer-logo
                         a.logo-link(href="/")
                             img.logo-img(src="/images/logo.svg", alt="Логотип Raccoon Flowers")
+            .popup-bouquet
+                .bouquet-wrapp                
+                    .owl-carousel.owl-theme.bouquet-slider_wrapp
+                        .bouquet-slider_item                        
+                            img(src="/images/flower-big.png", alt="Букет")
+                        .bouquet-slider_item                        
+                            img(src="/images/flower-big.png", alt="Букет")
+                        .bouquet-slider_item                        
+                            img(src="/images/flower-big.png", alt="Букет")
+                    .flower-description
+                        p.flower-title TO THE MOON AND BACK
+                        p.flower-text Сhoose a beautiful and comfortable coat
+                        p.flower-price <span>7 500</span> рублей
+                        input(type="radio", id="s5", name="size1")
+                        label(for="s5" class="size-check") S
+                        input(type="radio", id="m5", name="size1")
+                        label(for="m5" class="size-check label-size-none") M
+                        input(type="radio", id="l5", name="size1")
+                        label(for="l5" class="size-check label-size-none") L
+                        input(type="radio", id="xl5", name="size1")
+                        label(for="xl5" class="size-check label-size-none") XL
+                        a.popup-link(href="#") Сделать заказ
 
         if env.NODE_ENV == 'development'
             script(src="/jquery/jquery.min.js")

@@ -11,9 +11,103 @@ $grey: #707070;
   }
 }
 
+// Wellcome section
 
-.welcome-wrapper {
-  height: 100vh;
+
+.welcome-wrapper {  
+  .offer-slider {
+    .main {
+      &-list {        
+        margin-bottom: 150px; 
+        position: relative;               
+      }
+      &-item {
+        overflow: hidden;
+        position: relative;
+      }
+      &-info {
+        @media screen and (max-width:992px) {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 15px;
+          background: rgba(0, 0, 0, 0.3);
+          width: 100%;
+          color: #fff;
+        }
+        @media screen and (max-width:576px) {
+          bottom: 25px;
+          width: 95%;          
+        }
+      }      
+      &-info_text {
+        font-family: 'Futura-Bold';
+        font-size: 14px;
+        font-style: italic;
+        text-align: center;
+        margin-top: 15px;
+      }
+      &-info_link {
+        padding: 13px 0;
+        display: block;
+        width: 25%;
+        margin: 0 auto;
+        margin-top: 15px;
+        text-align: center;
+        border: 1px solid $m-color;
+        font-family: 'Futura-Bold';
+        text-transform: uppercase;
+        font-size: 11px;
+        color: $m-color;
+        transition: 0.3s;
+        &:hover {
+          background: $m-color;
+          color: #fff;
+          @media screen and (max-width:992px) {
+            background: transparent;
+          }
+        }
+        @media screen and (max-width:992px) {
+          border: 1px solid #fff;
+          color: #fff;
+        }
+        @media screen and (max-width:576px) {
+          width: 50%;         
+        }
+      }
+    }
+  }
+  .owl-dots {
+    transform: translateY(-135px);
+    @media screen and (max-width:992px) {
+      transform: translateY(0);
+    }
+    @media screen and (max-width:576px) {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .owl-theme .owl-dots .owl-dot span {
+    width: 12px;
+    height: 12px;
+    margin: 5px 7px;
+    background: transparent;
+    display: block;
+    border: 1px solid $m-color;
+    -webkit-backface-visibility: visible;
+    transition: opacity .2s ease;
+    border-radius: 30px;
+    @media screen and (max-width:576px) {
+      width: 9px;
+      height: 9px;
+    }
+  }
+  .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: $m-color;
+  }
 }
 
 // Paralax block
@@ -51,12 +145,8 @@ $grey: #707070;
   font-family: 'Futura-Bold';
   font-size: 14px;
   font-style: italic;
-  text-align: center;
-  width: 390px;
-  margin: 0 auto;
-  @media screen and (max-width:576px) {      
-    width: 90%;      
-  }
+  text-align: center;  
+  margin: 0 auto;  
 }
 .main-look {
   font-family: 'Futura-Bold';
@@ -115,6 +205,12 @@ $grey: #707070;
   position: absolute;
   bottom: 30px;
   left: 30px;
+  padding: 10px 15px 30px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  @media screen and (max-width:576px) {
+    width: 90%;
+  }
   .main-title {    
     text-align: left;    
   }
@@ -123,7 +219,31 @@ $grey: #707070;
   }
   .main-look {  
     width: 100%;
-    text-align: left;  
+    text-align: left;
+    color: #fff;  
+  }
+}
+
+
+.present-bouquet {
+  position: relative;
+  background: url(../../../images/girla2.jpg) no-repeat center center / cover;
+  .present-desc {
+    left: 50%;
+    transform: translateX(-50%);    
+    background: rgba(0, 0, 0, 0.3);
+    a {      
+      text-align: center;
+    }
+    .main-title {    
+      text-align: center;    
+    }
+    .main-text {    
+      text-align: center;    
+    }
+    .main-look {      
+      text-align: center;  
+    }
   }
 }
 

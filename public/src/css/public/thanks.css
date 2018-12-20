@@ -1,0 +1,29 @@
+.thanks-block {
+  text-align: center;
+  padding: 200px 0 240px; }
+  .thanks-block .thanks-title {
+    font-size: 32px;
+    margin-top: 25px;
+    font-weight: lighter; }
+  .thanks-block .thanks-text {
+    font-size: 18px;
+    margin-top: 70px; }
+    .thanks-block .thanks-text span {
+      display: block;
+      text-align: center; }
+
+.not-found .soon {
+  font-size: 86px;
+  font-family: 'Baskerville';
+  text-transform: uppercase;
+  text-align: center; }
+
+.not-found .guest {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 40px;
+  margin-bottom: 40px; }
+
+.not-found .development {
+  font-size: 18px;
+  text-align: center; }
