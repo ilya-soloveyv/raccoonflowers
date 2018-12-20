@@ -12,18 +12,30 @@
       display: block;
       text-align: center; }
 
-.not-found .soon {
-  font-size: 86px;
-  font-family: 'Baskerville';
-  text-transform: uppercase;
-  text-align: center; }
-
-.not-found .guest {
-  text-align: center;
-  font-size: 18px;
-  margin-top: 40px;
-  margin-bottom: 40px; }
-
-.not-found .development {
-  font-size: 18px;
-  text-align: center; }
+.not-found {
+  padding-top: 164px;
+  padding-bottom: 150px; }
+  .not-found .soon {
+    font-size: 86px;
+    font-family: 'Baskerville';
+    text-transform: uppercase;
+    text-align: center; }
+  .not-found .guest {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 40px;
+    margin-bottom: 40px; }
+  .not-found .development {
+    font-size: 18px;
+    text-align: center; }
+  .not-found .move-back {
+    color: #fff;
+    background: #CFBC9E;
+    padding: 10px 0;
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 20px;
+    margin-top: 150px; }
