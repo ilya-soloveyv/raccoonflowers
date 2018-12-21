@@ -27,10 +27,19 @@ function cleaner() {
     });
 }
 
+script(src="/jquery/jquery.min.js")
+script(src="/src/js/public/jquery.nicescroll.min.js")
+script(src="/src/js/public/mobiscroll.jquery.min.js")
+script(src="/src/js/public/owl.carousel.min.js")
+script(src="/src/js/public/app.js")
+
 gulp.task('js_min', () => {
     return gulp
         .src([
-            'node_modules/jquery/dist/jquery.min.js',            
+            'node_modules/jquery/dist/jquery.min.js',
+            'public/src/js/jquery.nicescroll.min.js',
+            'public/src/js/mobiscroll.jquery.min.js',
+            'public/src/js/owl.carousel.min.js',
             'public/src/js/public/app.js'
         ], { allowEmpty: true })
         .pipe(concat('app.js'))
