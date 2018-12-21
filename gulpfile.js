@@ -31,9 +31,9 @@ gulp.task('js_min', () => {
     return gulp
         .src([
             'node_modules/jquery/dist/jquery.min.js',
-            'public/src/js/jquery.nicescroll.min.js',
-            'public/src/js/mobiscroll.jquery.min.js',
-            'public/src/js/owl.carousel.min.js',
+            'public/src/js/public/jquery.nicescroll.min.js',
+            'public/src/js/public/mobiscroll.jquery.min.js',
+            'public/src/js/public/owl.carousel.min.js',
             'public/src/js/public/app.js'
         ], { allowEmpty: true })
         .pipe(concat('app.js'))
