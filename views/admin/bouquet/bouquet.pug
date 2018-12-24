@@ -15,21 +15,13 @@ block main
             .row
                 .col-lg-2
                     if bouquet
-                        input(type="hidden", name="id", value=bouquet._id)
+                        input(type="hidden", name="id" v-model="bouquet.id")
                     .form-group
                         label(for="title") Название букета
-                        if bouquet
-                            - var title = bouquet.title
-                        else
-                            - var title = null
-                        input#title.form-control(type="text", name="title", value= title)
+                        input#title.form-control(type="text" name="title" v-model="bouquet.title")
                     .form-group
                         label(for="uri") URI
-                        if bouquet
-                            - var uri = bouquet.uri
-                        else
-                            - var uri = null
-                        input#uri.form-control(type="text", name="uri", value= uri)
+                        input#uri.form-control(type="text" name="uri" v-model="bouquet.uri")
                 .col-lg-2
                     <label>Цветы</label>
                     each flower in flowers
@@ -58,4 +50,30 @@ block main
                                     - checked = true
                             input.form-check-input(type="checkbox", name="sizes", value= size._id, id= size._id, checked= checked)
                             label.form-check-label(for= size._id)= size.title
+            .row
+                .col
+                    ul#sizeTab.nav.nav-tabs(role="tablist")
+                        li.nav-item(v-for="(size, index) in sizes")
+                            a.nav-link(
+                                :id="size.id + '-tab'"
+                                :href="'#' + size.id"
+                                :aria-controls="size.id"
+                                :class="{active: sizeTabActive == index}"
+                                v-on:click="sizeTabUse(index)"
+                            ) {{ size.title }}
+                    #sizeTabPane.tab-content
+                        .tab-pane(
+                            v-for="(size, index) in sizes"
+                            :id="size.id"
+                            :aria-labelledby="size.id + '-tab'"
+                            :class="{show: sizeTabActive == index, active: sizeTabActive == index}"
+                        )
+                            .form-group
+                                label Стоимость
+                                input.form-control(
+                                    type="text"
+                                    name="title"
+                                )
             button.btn.btn-success(type="submit") Сохранение
+
+            pre {{ bouquet }}

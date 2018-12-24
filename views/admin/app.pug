@@ -6,28 +6,28 @@ html(lang="ru")
         title= title
         link(rel="stylesheet", href="/bootstrap/css/bootstrap.min.css")
     body
+        #app
+            nav.navbar.navbar-expand-lg.navbar-light.bg-light
+                a.navbar-brand(href="/admin") Admin
+                button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarSupportedContent", aria-controls="navbarSupportedContent", aria-expanded="false", aria-label="Toggle navigation")
+                    span.navbar-toggler-icon
+                div#navbarSupportedContent.collapse.navbar-collapse
+                    ul.navbar-nav.mr-auto
+                        li.nav-item
+                            a.nav-link(href="/admin/bouquet") Букеты
+                        li.nav-item
+                            a.nav-link(href="/admin/order") Заказы
+                        li.nav-item.dropdown
+                            a.nav-link.dropdown-toggle(href="#", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") Справочник
+                            .dropdown-menu(aria-labelledby="navbarDropdown")
+                                a.dropdown-item(href="/admin/flower") Цветы
+                                a.dropdown-item(href="/admin/color") Цветовая гамма
+                                a.dropdown-item(href="/admin/size") Размеры
+                                a.dropdown-item(href="/admin/packing") Упаковка
+            block main
 
-        nav.navbar.navbar-expand-lg.navbar-light.bg-light
-            a.navbar-brand(href="/admin") Admin
-            button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarSupportedContent", aria-controls="navbarSupportedContent", aria-expanded="false", aria-label="Toggle navigation")
-                span.navbar-toggler-icon
-            div#navbarSupportedContent.collapse.navbar-collapse
-                ul.navbar-nav.mr-auto
-                    li.nav-item
-                        a.nav-link(href="/admin/bouquet") Букеты
-                    li.nav-item
-                        a.nav-link(href="/admin/order") Заказы
-                    li.nav-item.dropdown
-                        a.nav-link.dropdown-toggle(href="#", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") Справочник
-                        .dropdown-menu(aria-labelledby="navbarDropdown")
-                            a.dropdown-item(href="/admin/flower") Цветы
-                            a.dropdown-item(href="/admin/color") Цветовая гамма
-                            a.dropdown-item(href="/admin/size") Размеры
-                            a.dropdown-item(href="/admin/packing") Упаковка
-        block main
-
-
-
+        script(src="/vue/vue.js")
         script(src="/jquery/jquery.min.js")
         script(src="/popper/popper.min.js")
         script(src="/bootstrap/js/bootstrap.min.js")
+        script(src="/src/js/admin/app.js")
