@@ -1,5 +1,5 @@
 $grey: #707070;
-$m-color: #CFBC9E;
+$m-color: #B9A689;
 
 // Mixin
 @mixin placeholder {
@@ -34,10 +34,13 @@ $m-color: #CFBC9E;
     padding-top: 70px;
   }
   &-close {
-    display: block;
+    display: none;
     position: absolute;
     top: 15px;
     right: 15px;
+    @media screen and (max-width:992px) {
+      display: block;
+    }
   }
   &_active {
     transform: translateX(0);
@@ -136,7 +139,7 @@ label.avtor-bouquet:after {
 }
 
 .filter-title {  
-  font-family: 'GillSans-SemiBold';
+  font-family: 'NotoSansMedium';
   font-size: 13px;
   color: $grey;
   text-transform: uppercase;
@@ -218,7 +221,7 @@ label.filter-check:before {
   }
   @include placeholder {
     color: $m-color;
-    font-family: 'Gill Sans'; 
+    font-family: 'NotoSans'; 
   } 
 }
 
@@ -405,7 +408,7 @@ input[type='radio'] {
   &_price {
     text-align: center;
     font-size: 11px;
-    font-family: 'GillSans-SemiBold';
+    font-family: 'NotoSansMedium';
     margin-top: 25px;
   }
   &:hover {
@@ -423,7 +426,6 @@ input[type='radio'] {
 
 .catalog-picture {
   height: 33vw;
-  border: 1px solid $m-color;
   position: relative;
   display: flex;
   align-items: center;
@@ -470,7 +472,7 @@ input[type='radio'] {
   margin-top: 30px;
   opacity: 0;
   transition: all .3s;
-  font-family: 'Futura-Bold';
+  font-family: 'NotoSansMedium';
   font-size: 11px;  
   cursor: pointer;
   &:hover {

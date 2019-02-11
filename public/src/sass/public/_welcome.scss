@@ -1,5 +1,5 @@
 // Color
-$m-color: #CFBC9E;
+$m-color: #B9A689;
 $grey: #707070;
 
 
@@ -13,28 +13,61 @@ $grey: #707070;
 
 // Wellcome section
 
-
-.welcome-wrapper {  
+.welcome-wrapper {
+  position: sticky;
+  top: -50%;
+  background: #fff;
   .offer-slider {
     .main {
-      &-list {        
-        margin-bottom: 150px; 
-        position: relative;               
-      }
-      &-item {
-        overflow: hidden;
+      &-list {
         position: relative;
+        width: 95%;
+        margin: 0 auto;        
+        @media screen and (max-width:992px) {
+          width: 100%;
+        }               
+      }
+      &-item {        
+        position: relative;
+        height: 700px;
+        @media screen and (max-width:992px) {
+          height: auto;
+        }
+      }
+      &-img {
+        position: relative;
+        height: 600px;
+        overflow: hidden;
+        @media screen and (max-width:992px) {
+          height: auto;
+        }               
+        @media screen and (max-width:576px) {
+          height: 500px;
+        }               
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          @media screen and (max-width:992px) {
+            position: static;            
+            transform: none;
+            height: auto;
+          }
+          @media screen and (max-width:576px) {
+            position: absolute;
+            transform: translate(-50%,-50%);
+            height: 100%;
+            width: auto;
+          }
+        }
       }
       &-info {
         @media screen and (max-width:992px) {
           position: absolute;
-          bottom: 0;
+          bottom: 10%;
           left: 50%;
-          transform: translateX(-50%);
-          padding: 15px;
-          background: rgba(0, 0, 0, 0.3);
-          width: 100%;
-          color: #fff;
+          transform: translateX(-50%);          
         }
         @media screen and (max-width:576px) {
           bottom: 25px;
@@ -42,7 +75,7 @@ $grey: #707070;
         }
       }      
       &-info_text {
-        font-family: 'Futura-Bold';
+        font-family: 'NotoSansMedium';
         font-size: 14px;
         font-style: italic;
         text-align: center;
@@ -56,7 +89,7 @@ $grey: #707070;
         margin-top: 15px;
         text-align: center;
         border: 1px solid $m-color;
-        font-family: 'Futura-Bold';
+        font-family: 'NotoSansMedium';
         text-transform: uppercase;
         font-size: 11px;
         color: $m-color;
@@ -65,16 +98,12 @@ $grey: #707070;
           background: $m-color;
           color: #fff;
           @media screen and (max-width:992px) {
-            background: transparent;
+            
           }
         }
         @media screen and (max-width:992px) {
-          border: 1px solid #fff;
-          color: #fff;
-        }
-        @media screen and (max-width:576px) {
-          width: 50%;         
-        }
+          width: 50%;
+        }        
       }
     }
   }
@@ -89,6 +118,11 @@ $grey: #707070;
       left: 50%;
       transform: translateX(-50%);
     }
+  }
+  .owl-theme .owl-nav.disabled+.owl-dots {
+    @media screen and (max-width:992px) {      
+      margin-top: -25px;
+    }    
   }
   .owl-theme .owl-dots .owl-dot span {
     width: 12px;
@@ -113,25 +147,11 @@ $grey: #707070;
 // Paralax block
 
 .paralax-wrapper {
-  background: url(../../../images/incar.jpg) no-repeat center top / cover;
-  background-attachment: fixed;
-  height: 850px;
-  @media screen and (max-width:576px) {      
-      height: 600px;
+  background: url(../../../images/incar.jpg) no-repeat center top / cover;  
+  height: 850px;  
+  @media screen and (max-width:992px) {      
+      display: none;
   }
-}
-
-.paralax-desc {
-  padding-bottom: 40px;
-  @media screen and (max-width:576px) {      
-      width: 90%;
-      margin: 0 auto;
-      background: rgba(0, 0, 0, 0.3);
-      color: #fff;
-      transform: translateY(-260px);
-      padding: 15px 0 30px;
-
-  }  
 }
 
 .main-title {
@@ -142,14 +162,14 @@ $grey: #707070;
   margin-top: 30px;
 }
 .main-text {
-  font-family: 'Futura-Bold';
+  font-family: 'NotoSansMedium';
   font-size: 14px;
   font-style: italic;
   text-align: center;  
   margin: 0 auto;  
 }
 .main-look {
-  font-family: 'Futura-Bold';
+  font-family: 'NotoSansMedium';
   font-size: 12px;
   display: block;
   margin: 0 auto;
@@ -162,204 +182,247 @@ $grey: #707070;
     color: #fff;
   }
   span {
-    font-family: 'Gill Sans';
+    font-family: 'NotoSans';
     font-size: 16px;
   }
 }
 
 
+// Supply block
 
-// Present block
-
-.present-flower,
-.present-bouquet {
-  width: 100%;
-  height: 700px;
-  margin-bottom: 30px;
-}
-
-.present-flower {
+.supply {
   display: flex;
-  position: relative;
-}
-
-.photo-big {
-  height: 100%;
-  width: 70%;
-  background: url(../../../images/chanel.jpg) no-repeat center center / cover;
-  @media screen and (max-width:992px) {
-    width: 100%;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding-top: 50px;
+  max-height: 1430px;
+  @media screen and (max-width:1200px) {
+    max-height: 1080px;
   }
-}
-
-.photo-small {
-  height: 100%;
-  width: 30%;
-  background: url(../../../images/girla.jpg) no-repeat center center / cover;
   @media screen and (max-width:992px) {
-    display: none;
+    flex-direction: column;
+    max-height: none;
   }
-}
-
-.present-desc {
-  position: absolute;
-  bottom: 30px;
-  left: 30px;
-  padding: 10px 15px 30px;
-  background: rgba(0, 0, 0, 0.3);
-  color: #fff;
   @media screen and (max-width:576px) {
-    width: 90%;
+    padding-top: 0;
   }
-  .main-title {    
-    text-align: left;    
-  }
-  .main-text {    
-    text-align: left;    
-  }
-  .main-look {  
-    width: 100%;
-    text-align: left;
-    color: #fff;  
-  }
-}
-
-
-.present-bouquet {
-  position: relative;
-  background: url(../../../images/girla2.jpg) no-repeat center center / cover;
-  .present-desc {
-    left: 50%;
-    transform: translateX(-50%);    
-    background: rgba(0, 0, 0, 0.3);
-    a {      
-      text-align: center;
+  .left-block {
+    width: 65%;
+    @media screen and (max-width:992px) {
+      width: 100%;
+      border-bottom: 1px solid $m-color;
+      padding-bottom: 35px;
     }
-    .main-title {    
-      text-align: center;    
+    @media screen and (max-width: 576px) {
+      border-bottom: none;
+      padding-bottom: 0;
     }
-    .main-text {    
-      text-align: center;    
+    .main-img {
+      height: 680px;
+      background: #fff url(../../../images/girla2.jpg) no-repeat center center / cover;
+      position: relative;
+      @media screen and (max-width:1200px) {
+        height: 500px;
+      }
+      .text-block {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        a {
+          color: #fff;
+        }
+      }      
     }
-    .main-look {      
-      text-align: center;  
+    .secondary {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      @media screen and (max-width: 576px) {
+        flex-direction: column;
+        margin-top: 0;
+      }
+      &-img {
+        width: 49%;
+        height: 670px;
+        background: #fff url(../../../images/girla.jpg) no-repeat center center / cover;
+        position: relative;
+        @media screen and (max-width:1200px) {
+          height: 500px;
+        }
+        @media screen and (max-width: 576px) {
+          width: 100%;
+        }
+        .text-block {
+          position: absolute;
+          width: 80%;
+          bottom: 5%;
+          left: 50%;
+          transform: translateX(-50%);
+          color: #fff;
+          a {
+            color: #fff;
+          }
+        }
+      }
     }
   }
-}
-
-
-
-// Catalog list
-
-.catalog-wrapper {
-  @media screen and (max-width:992px) {
-      display: none;
-  }
-  .catalog-list {
-    .catalog-item {
-      @media screen and (max-width:576px) {
-          margin-top: 15px;
+  .right-block {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    @media screen and (max-width:992px) {
+      width: 95%;
+      margin: 0 auto;
+      padding-top: 35px;      
+    }    
+    .bouquet-slider_title {
+      img {
+        width: 130px;
+      }
+      span {
+        font-size: 36px;
+      }
+    }
+    .unit {
+      flex-grow: 1;
+      overflow: hidden;
+      overflow-y: scroll;
+      padding-right: 8px;
+      &-item {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10px;
+        margin-bottom: 10px;
+        align-items: center;
+        @media screen and (max-width:576px) {
+          flex-direction: column;      
+        }
+        &:nth-child(n+6) {
+          @media screen and (max-width:992px) {
+            display: none;      
+          }
+        }
+        &:nth-child(n+4) {
+          @media screen and (max-width:576px) {
+            display: none;      
+          }
+        }
+        .flower-img {
+          width: 100%;
+          padding-top: 45%;
+          background: #fff url(../../../images/flower-big.png) no-repeat center center / contain;
+        }
+        .desc-text {
+          flex-grow: 1;          
+          margin-left: 15px;
+          @media screen and (max-width:576px) {
+            margin-left: 0;      
+          }
+          .main-text {
+            font-family: 'NotoSans';
+            font-style: normal;
+            font-size: 13px;
+          }
+          .main-look {
+            @media screen and (max-width:1200px) {
+              width: 50%;
+            }
+            @media screen and (max-width:576px) {
+              color: $m-color;
+            }
+          }
+          .flower-price {
+            text-align: center;
+            margin-bottom: 5px;
+            span {
+              font-family: 'Baskerville';
+              font-style: italic;
+              font-size: 16px;
+            }
+          }
+        }
       }
     }
   }
 }
 
-// History block
 
-.history  {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 140px;
-  @media screen and (max-width:1200px) {
-      align-items: center;
-  }
-  @media screen and (max-width:992px) {
-      flex-direction: column;
-  }
-  @media screen and (max-width:576px) {
-    display: none;
-  }
-  .shop {
-    width: 70%;
-    display: block;
-    @media screen and (max-width:992px) {
-      width: 100%;
-    }   
-    img {
-      width: 100%;
-    }
-  }
-  &-text {
-    width: 25%;
-    color: $grey;
-    font-size: 16px;
-    @media screen and (max-width:1200px) {
-        width: 30%;
-    }
-    @media screen and (max-width:992px) {
-      width: 80%;
-      margin: 0 auto;
-      text-align: center;
-    }
-  }
-}
-
-// Advantages Block
+// Advantages block
 
 .advantages {
-  margin-top: 100px;
-  border-top: 1px solid #d3d3d3;
-  border-bottom: 1px solid #d3d3d3;
-  padding: 30px 0;
-  &-title {
-    text-align: center;
-    font-size: 25px;
-    font-weight: normal;
-    color: $grey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px 0;
+  border-top: 1px solid $m-color;
+  border-bottom: 1px solid $m-color;
+  margin-top: 45px;
+  @media screen and (max-width:992px) {
+    flex-direction: column;
   }
-  &-list {
+  &_item {
     display: flex;
+    align-items: center;
     justify-content: space-around;
-    margin-top: 35px;
-    @media screen and (max-width:992px) {
+    padding: 0px 25px;
+    @media screen and (max-width:1200px) {
+      padding: 0px 15px 0px 5px;
       justify-content: space-between;
-    }
+    }    
+    @media screen and (max-width:992px) {
+      justify-content: space-around;
+      width: 100%;
+    }    
     @media screen and (max-width:576px) {
       flex-direction: column;
+    }    
+    &:nth-child(2) {
+      border-left: 1px solid $m-color;
+      border-right: 1px solid $m-color;
+      @media screen and (max-width:992px) {
+        border: none;
+        border-top: 1px solid $m-color;
+        border-bottom: 1px solid $m-color;
+        padding: 35px 0;
+        margin: 35px 0;
+      }
     }
   }
-  &-item {
-    width: 28%;
-    @media screen and (max-width:576px) {
-      width: 100%;
-      display: flex;
-      align-items: center;
+  &_block {
+    width: 100%;
+    text-align: center;
+    @media screen and (max-width:992px) {
+      max-width: 260px;
+      text-align: left;
     }
-    img {
-      display: block;
+    @media screen and (max-width:576px) {
+      max-width: 100%;
+      text-align: center;
+    }
+    .advantages_title {
+      margin-bottom: 30px;
+      font-size: 18px;
+      font-family: 'Baskerville';
+      font-weight: normal;
+    }
+    .advantages_text {
+      font-size: 13px;
+      font-family: 'NotoSans';
+      width: 90%;
       margin: 0 auto;
       @media screen and (max-width:992px) {
         width: 100%;
       }
-      @media screen and (max-width:576px) {
-        width: 150px;
-        margin: 0;
-        margin-right: 10px;        
-      }
     }
-  }
-  &-text {
-    color: $grey;
-    font-size: 17px;
-    text-align: center;
-    margin-top: 20px;
   }
 }
 
 // Bouquet Slider
 
 .bouquet-slider {
-  margin-top: 100px;
+  margin-top: 50px;
   @media screen and (max-width:576px) {
     margin-top: 60px;
   }

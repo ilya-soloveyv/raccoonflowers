@@ -1,5 +1,5 @@
 // Color
-$m-color: #CFBC9E;
+$m-color: #B9A689;
 $grey: #707070;
 
 // Mixin
@@ -13,17 +13,21 @@ $grey: #707070;
 
 .product-wrapper {	
 	padding-top: 130px;
-	padding-bottom: 40px;
-	border-bottom: 1px solid #cccccc;	
+	padding-bottom: 40px;		
 	@media screen and (max-width:1200px) {
 			padding-top: 80px;				
 	}
 	@media (max-width: 992px) {
+			padding-top: 30px;
 			display: flex;
 			flex-direction: column;
 			flex-wrap: nowrap;
 			padding-bottom: 0;
 			border-bottom: none;
+	}
+	@media (max-width: 576px) {
+			padding-top: 20px;
+			
 	}
 }
 
@@ -38,15 +42,16 @@ $grey: #707070;
 		order: 1;
 	}
 	.picture-list {
-		width: 170px;
-		min-width: 170px;
-		max-height: 806px; 		
+		width: 110px;
+		min-width: 110px;
+		max-height: 420px; 		
 		overflow-y: auto;
 		overflow-x: hidden;
 		position: relative;
 		@media screen and (max-width:1200px) {
-        width: 150px;
-				min-width: 150px;
+        width: 90px;
+				min-width: 90px;
+				max-height: 320px;
     }
 		@media screen and (max-width: 992px) {
 			display: none;
@@ -54,10 +59,10 @@ $grey: #707070;
 	}
 	.picture-item {				
 		margin-bottom: 27px;
-		width: 155px;
+		width: 100px;
 		@media screen and (max-width:1200px) {
-        width: 140px;
-				margin-bottom: 40px;				
+        width: 80px;
+				margin-bottom: 10px;				
     }					
 		&:last-child {
 			margin-bottom: 0;
@@ -74,6 +79,9 @@ $grey: #707070;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		@media screen and (max-width: 1200px) {
+			margin-left: 10px;			
+		}
 		@media screen and (max-width: 992px) {
 			margin-left: 0;			
 		}
@@ -81,6 +89,12 @@ $grey: #707070;
 			height: auto;
 			width: auto;
 			max-width: 93%;
+			@media screen and (max-width: 1200px) {
+				max-width: 100%;			
+			}			
+			@media screen and (max-width: 1200px) {
+				max-width: 80%;			
+			}			
 		}
 		.prev-arrow {
 			position: absolute;
@@ -99,42 +113,102 @@ $grey: #707070;
 	}
 }
 
+.clear {
+	clear: both;
+}
+
 .product-title {
 	margin-left: 65%;
+	text-align: center;
+	margin-top: 5%;
+	@media screen and (max-width: 1200px) {
+			margin-top: 0;
+	}
 	@media screen and (max-width: 992px) {
 			margin: 0;
 			order: 0;
 			width: 100%;
 	}
 	.flower-title {
-			text-transform: uppercase;
-			font-size: 14px;
-			margin-bottom: 10px;
-			@media screen and (max-width: 992px) {
-				text-align: center;			
-			}
-  	}
-  	.flower-text {
-      font-size: 13px;
-      font-family: 'Baskerville';
-      margin-bottom: 23px;
-			@media screen and (max-width: 992px) {
-				text-align: center;			
-			}
- 		}
-  	.flower-price {
-			span {
-				font-style: italic;
-				font-family: 'Baskerville';
-				font-size: 17px;
-    	}
-			font-family: 'Helvetica Neue';
-			font-size: 12px;
-			margin-bottom: 50px;
-			@media screen and (max-width: 992px) {
-				text-align: center;			
-			}
-  	}
+		text-transform: uppercase;
+		font-size: 14px;
+		margin-bottom: 10px;
+		@media screen and (max-width: 992px) {
+			text-align: center;			
+		}
+  }
+	.flower-text {
+		font-size: 13px;
+		font-family: 'Baskerville';
+		margin-bottom: 23px;
+		@media screen and (max-width: 992px) {
+			text-align: center;			
+		}
+	}
+	.flower-price {
+		span {
+			font-style: italic;
+			font-family: 'Baskerville';
+			font-size: 17px;
+		}
+		font-family: 'NotoSans';
+		font-size: 12px;
+		margin-bottom: 50px;
+		@media screen and (max-width: 1200px) {
+			margin-bottom: 30px;			
+		}
+		@media screen and (max-width: 992px) {
+			text-align: center;			
+		}
+	}
+	.slider-desc {
+		text-align: center;
+		@media screen and (max-width: 992px) {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;	
+			margin-top: 20px;
+			order: 0;		
+		}			
+	}
+	.size-block {
+		@media screen and (max-width: 992px) {
+			position: relative;		
+		}						
+	}
+	label {
+		width: 26px;
+		height: 26px;
+		background: transparent;  
+		color: $grey;
+		border-radius: 50%;
+		line-height: 26px;
+		font-size: 15px;
+		display: inline-block;
+		text-align: center;
+		margin: 0 13px;
+		transition: all .3s;
+		cursor: pointer;
+		outline: none;		
+		&:before {
+			content: '';
+			width: calc(100% + 26px);
+			height: 1px;
+			background: $m-color;
+			display: block;
+			margin-left: -13px;
+			transform: translateY(-10px);
+		}            
+	}		
+	input[type='radio'] {
+			&:checked {
+				&+label {
+					background: $m-color;
+					color: #fff;                
+				}
+		}
+	}
 }
 
 
@@ -148,195 +222,81 @@ $grey: #707070;
 			display: flex;
 			flex-direction: column;			
 	}	
-		.slider-desc {
+		.tabs {
+			margin-top: 90px;
+			margin-bottom: 40px;
+			width: 100%;
+			@media screen and (max-width: 1200px) {
+				margin-top: 40px;
+				margin-bottom: 20px;		
+			}
 			@media screen and (max-width: 992px) {
+				width: 75%;
+				margin: 0 auto;
+				order: 2;
+				margin-top: 50px;		
+			}
+			@media screen and (max-width: 576px) {
+				display: none;		
+			}
+			&__caption {
 				display: flex;
 				justify-content: space-between;
-				align-items: center;
-				position: relative;	
-				margin-top: 20px;
-				order: 0;		
-			}			
-			.star-img {
-				display: none;
-				@media screen and (max-width: 992px) {
-					display: block;
-					width: 30px;
-					height: 30px;		
-				}				
-			}
-			.dots {
-				display: none;
-				@media screen and (max-width: 992px) {
-					display: flex;
-					position: absolute;
-					top: 50%;
-					left: 50%;
-					transform: translate(-50%,-50%);		
-				}
+				border-bottom: 1px solid $m-color;
+				padding-bottom: 11px;
+				margin-bottom: 30px;
 				li {
-					button {
-						padding: 0;
-						border: 1px solid $m-color;
-						background: transparent;
-						border-radius: 50%;
-						width: 11px;
-						height: 11px;
-						margin: 0 5px;
-						&.active {
-							background: $m-color;
-						}
+					font-weight: bold;
+					font-size: 12px;					
+					&:not(.active) {
+						cursor: pointer;
+						font-weight: normal;
 					}
 				}
 			}
-		}
-		.size-block {
-			@media screen and (max-width: 992px) {
-				position: relative;		
-			}		
-			.size-text {
+			&__content {
 				display: none;
-				@media screen and (max-width: 992px) {
-					display: inline-block;
-					font-size: 13px;
-					border-bottom: 1px solid $m-color;
-					padding-bottom: 5px;		
-				}		
-			}
-			.slide-size {
-				@media screen and (max-width: 992px) {
-					position: absolute;
-					top: -110px;
-    			right: 12px;
-					display: none;		
+				width: 90%;
+				margin: 0 auto;
+				p {
+					font-size: 14px;
+					font-family: 'Baskerville';
+					line-height: 1.7em;
+					margin-bottom: 20px;
 				}
-				label {
-					@media screen and (max-width: 992px) {
-						margin: 0;
-						display: block;
-						margin-bottom: 10px;		
-					}
+				span {
+					font-size: 10px;
+					
 				}
-			}			
-		}
-		label {
-			width: 26px;
-			height: 26px;
-			background: transparent;  
-			color: $grey;
-			border-radius: 50%;
-			line-height: 26px;
-			font-size: 15px;
-			display: inline-block;
-			text-align: center;
-			margin: 0 13px;
-			transition: all .3s;
-			cursor: pointer;
-			outline: none;		
-			&:after {
-				content: '';
-				width: calc(100% + 26px);
-				height: 1px;
-				background: #CCCCCC;
-				display: block;
-				margin-left: -13px;
-				margin-top: 10px;
-				@media screen and (max-width: 992px) {
-					display: none;		
-				}
-			}            
-		}		
-		input[type='radio'] {
-				&:checked {
-					&+label {
-						background: $m-color;
-						color: #fff;                
-					}
-			}
-		}
-		.box-size {
-			font-size: 15px;
-			margin-top: 45px;
-			@media screen and (max-width: 992px) {
-				display: none;			
-			}
-			&_number {
-				color: $grey;
-			}
-		}
-		.btn-wrapp {
-			@media screen and (max-width: 992px) {
-				order: 1;			
-			}			
-		}
-		.more-info_mobile {
-			@media screen and (max-width: 992px) {
-				font-size: 14px;
-				padding: 13px 0;
-				border-top: 1px solid #CCCCCC;
-				border-bottom: 1px solid #CCCCCC;
-				width: 100%;
-				margin-bottom: 25px;
-				position: relative;
-				cursor: pointer;
-				order: 2;			
-			}
-			&:before {
-				@media screen and (max-width: 992px) {
-					content: '';
+				&.active {
 					display: block;
-					width: 1px;
-					height: 17px;
-					background: $grey;
-					position: absolute;
-					right: 20px;
-					top: 12px;		
-				}
-			}
-			&:after {
-				@media screen and (max-width: 992px) {
-					content: '';
-					display: block;
-					width: 17px;
-					height: 1px;
-					background: $grey;
-					position: absolute;
-					right: 12px;
-					top: 20px;		
 				}
 			}
 		}
 
-		.composition-bouquet {
-			font-size: 15px;
-			margin-top: 20px;
-			margin-bottom: 20px;
+		.btn-wrapp {			
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 			@media screen and (max-width: 992px) {
-				margin: 0;			
-			}
-			&-list {
-				@media screen and (max-width: 768px) {
-					display: none;
-					padding-top: 10px;			
-				}
-			}
-			&-item {
-				font-size: 15px;
-				color: $grey;
-			}
-		}
+				order: 1;			
+			}			
+		}				
 		.btn-order {
-			width: 35%;
+			width: 45%;
+			min-width: 200px;
 			padding: 10px 0;
 			text-transform: uppercase;
 			color: #fff;
-			display: inline-block;
-			margin-top: 90px;
-			margin-bottom: 50px;
+			display: inline-block;			
 			text-align: center;
+			margin-top: 15px;
 			@media screen and (max-width:1200px) {
-				width: 49%;
-				margin-top: 70px;
+				width: 70%;				
+				padding: 13px 0;			
+			}
+			@media screen and (max-width:992px) {
+				width: 50%;				
 				padding: 13px 0;			
 			}
 			@media screen and (max-width: 576px) {
@@ -347,17 +307,16 @@ $grey: #707070;
 			}
 		}
 		.move-order {
-			background: $grey;
+			background: $m-color;
+			border: 1px solid $m-color;
 			@media screen and (max-width: 576px) {
 				margin-top: 30px;	
 			}
 		}
 		.buy-order {
-			background: $m-color;
-			margin-left: 15px;
-			@media screen and (max-width:1200px) {
-				margin-left: 2%;				
-			}
+			background: transparent;
+			border: 1px solid $m-color;
+			color: $m-color;
 			@media screen and (max-width: 576px) {
 				margin-left: 0;
 				margin: 0 auto;
@@ -400,12 +359,7 @@ $grey: #707070;
 				right: 12px;
 				top: 20px;
 			}			
-		}
-		.desc-text {
-			color: $grey;
-			padding-top: 15px;
-			display: none;
-		}
+		}		
 		.product-more-info {
 			margin-top: 170px;
 			font-size: 14px;
@@ -481,7 +435,7 @@ $grey: #707070;
 						font-family: 'Baskerville';
 						font-size: 17px;
 					}
-					font-family: 'Helvetica Neue';
+					font-family: 'NotoSans';
 					font-size: 12px;
 					margin-bottom: 50px;
 				}

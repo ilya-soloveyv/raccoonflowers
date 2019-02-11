@@ -20,7 +20,7 @@ block main
             input.order-input(type="email" name="your_mail" placeholder="Ваш email")
           .order-point.order-point_datatime
             h2.order-subtitle.order-subtitle_datatime Дата и время доставки
-            .data-choise Выберите дату: <input class="input-data" id="demo-desktop" data-input-style="box" placeholder="Please Select...">
+            .data-choise Выберите дату: <input class="input-data" placeholder="Открыть календарь">
             .time-wrapper 
               .time-fix
                 input(type="radio", id="from9to11", name="size")
@@ -43,8 +43,7 @@ block main
                 input(type="radio", id="night", name="size")
                 label(for="night" class="size-check") Доставка ночью
                 p.time-cost +700 рублей
-                p.time-desc Точность доставки в пределах 15 минут
-                input#demo-responsive-time(placeholder="Выберите время")
+                p.time-desc Точность доставки в пределах 15 минут               
           .order-point.order-point_adress
             h2.order-subtitle.order-subtitle_adress Адрес доставки
             .city-adress
@@ -73,14 +72,14 @@ block main
             label(for="recipient" class="size-check") Я являюсь получателем
             input(type="checkbox", id="dont_call", name="recipient")            
             label(for="dont_call" class="size-check") Не связываться с получателем для уточнения удобного времени
-            p Во время звонка наш оператор не раскроет имя отпраителя
+            p Во время звонка наш оператор не раскроет имя отправителя
             input(type="checkbox", id="dont_name", name="recipient")
             label(for="dont_name" class="size-check") Сохранить ваше имя в тайне
-            p Во время звонка наш оператор не раскроет имя отпраителя
+            p Во время звонка наш оператор не раскроет имя отправителя
           .order-point.order-point_postcard
             h2.order-subtitle.order-subtitle_postcard Текст открытки
             .postcard 
-              p.postcard-text I Love You
+              textarea.postcard-text
               img.postcard-logo(src="/images/logo.svg", alt="Логотип Raccoon Flowers")
             input(type="checkbox", id="put", name="put_postcard")
             label(for="put" class="size-check") Вложить открытку без подписи

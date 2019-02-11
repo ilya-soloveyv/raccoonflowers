@@ -4,8 +4,8 @@ html(lang="ru")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
         title= title
-        if env.NODE_ENV == 'development'
-            link(rel="stylesheet", href="/src/css_static/mobiscroll.jquery.min.css")
+        if env.NODE_ENV == 'development'            
+            link(rel="stylesheet", href="/src/css_static/datepicker.min.css")
             link(rel="stylesheet", href="/src/css_static/owl.carousel.min.css")
             link(rel="stylesheet", href="/src/css_static/owl.theme.default.min.css")
             link(rel="stylesheet", href="/src/css/public/app.css")
@@ -58,6 +58,8 @@ html(lang="ru")
                             img.search-icon-input(src="/images/search-input.png", alt="Иконка поиска")
                         span.search-close
                             img(src="/images/search-close.png", alt="Иконка поиска")
+            .sale
+                p.sale__text <span>БЕСПЛАТНАЯ ДОСТАВКА</span> при заказе от 4 000 рублей
             .navigation
                 .container
                     .top-nav
@@ -65,16 +67,15 @@ html(lang="ru")
                             img.burger-icon(src="/images/burger.png", alt="Бургер меню")
                         .search
                             img.search-icon(src="/images/search.png", alt="Иконка поиска")
+                        a.top-phone(href="tel:88007778877") 8 (800) 777 88 77 
                         .logo
                             a.logo-link(href="/")
                                 img.logo-img(src="/images/logo.svg", alt="Логотип Raccoon Flowers")
+                        
                         .inter
                             img.star(src="/images/star.png", alt="Звезда Raccoon Flowers")
-                            .sign-wrapp
-                                p.cabinet My raccoon
-                                a.sign-link(href="#") Вход
-                                span /
-                                a.sign-link(href="#") Регистрация
+                            .sign
+                                a.sign__link(href="/") my <span>R</span>     
                             img.bucket(src="/images/bucket.png", alt="Корзина Raccoon Flowers")                           
             .nav-menu
                 .container
@@ -104,22 +105,25 @@ html(lang="ru")
         footer.footer
             .container
                 .footer-wrapper
-                    .footer-main-info
-                        img.phone(src="/images/phone1.png")
+                    .footer-head-info
+                        .social-blok
+                            a.social-link(href="#", target="_blanc")
+                                i.icon-facebook
+                            a.social-link(href="#", target="_blanc")
+                                i.icon-instagram
+                        form.subscribe                            
+                            input(type="email", name="email", placeholder="Ваш email")
+                            button.subscribe-send Подписаться
+                    .footer-main-info                        
                         a.footer-phone(href="tel:88003507457") 8 (800) 350 7457
-                        img.messenger(src="/images/messenger.png")
+                        img.messenger(src="/images/messenger.svg")
                         a.footer-phone(href="tel:+79312715782") +7 (931) 271-57-82
                         .footer-social
-                            a.footer-social_link(href="#")
-                                img(src="/images/whatsapp.png")
-                            a.footer-social_link(href="#")
-                                img(src="/images/viber.png")
-                            a.footer-social_link(href="#")
-                                img(src="/images/telegram.png")
+                            img(src="/images/whatsapp.png")
+                            img(src="/images/viber.png")
+                            img(src="/images/telegram.png")
                     .footer-all-info
-                        ul.footer-info-text
-                            li.footer-info-text_item
-                                h6.title-info Racconflowers.com
+                        ul.footer-info-text                            
                             li.footer-info-text_item
                                 h6.title-info О нас
                                 ul.list-info
@@ -150,11 +154,13 @@ html(lang="ru")
                                 h6.title-info Информация
                                 ul.list-info
                                     li.list-info_item
-                                        a.list-info_link(href="#") Политика<br> конфиденциальности
-                        form.subscribe
-                            h6.title-info Подписывайтесь на нас
-                            input(type="email", name="email", placeholder="Ваш email")
-                            button.subscribe-send Подписаться
+                                        a.list-info_link(href="#") Политика<br> конфиденциальности  
+                        .footer-brand
+                            p.brand-text RACCOONFLOWERS.COM
+                            p.copyright COPYRIGHT © 2012–2018 PANAMY<br>ALL RIGHTS RESERVED.                
+                    .footer-logo-racc
+                        a.logo-link(href="/")
+                            img.logo-img(src="/images/racclogo.svg", alt="Логотип Raccoon Flowers")
                     .footer-logo
                         a.logo-link(href="/")
                             img.logo-img(src="/images/logo.svg", alt="Логотип Raccoon Flowers")
@@ -183,8 +189,8 @@ html(lang="ru")
 
         if env.NODE_ENV == 'development'
             script(src="/jquery/jquery.min.js")
+            script(src="/src/js/public/datepicker.min.js")
             script(src="/src/js/public/jquery.nicescroll.min.js")
-            script(src="/src/js/public/mobiscroll.jquery.min.js")
             script(src="/src/js/public/owl.carousel.min.js")
             script(src="/src/js/public/app.js")
         else

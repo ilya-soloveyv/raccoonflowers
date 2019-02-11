@@ -1,115 +1,129 @@
 extends ../app
 
 block main
-    
-    .welcome-wrapper
+    .sticki
+        .welcome-wrapper
+            .container
+                .offer-slider
+                    ul.main-list.owl-carousel.owl-theme
+                        li.main-item
+                            .main-img
+                                img(src="/images/main-1.jpg", alt="Цветы")
+                            .main-info
+                                p.main-info_text Discover the women’s ready-to-wear pieces and .
+                                a.main-info_link(href="#") Подробнее
+                        li.main-item
+                            .main-img
+                                img(src="/images/main-1.jpg", alt="Цветы")
+                            .main-info
+                                p.main-info_text Discover the women’s ready-to-wear pieces and .
+                                a.main-info_link(href="#") Подробнее
+                        li.main-item
+                            .main-img
+                                img(src="/images/main-1.jpg", alt="Цветы")
+                            .main-info
+                                p.main-info_text Discover the women’s ready-to-wear pieces and .
+                                a.main-info_link(href="#") Подробнее
+                .offer-once
+        .paralax-wrapper
+    .images
         .container
-            .offer-slider
-                ul.main-list.owl-carousel.owl-theme
-                    li.main-item
-                        .main-img
-                            img(src="/images/main-1.jpg", alt="Цветы")
-                        .main-info
-                            p.main-info_text Discover the women’s ready-to-wear pieces and .
-                            a.main-info_link(href="#") Подробнее
-                    li.main-item
-                        .main-img
-                            img(src="/images/main-1.jpg", alt="Цветы")
-                        .main-info
-                            p.main-info_text Discover the women’s ready-to-wear pieces and .
-                            a.main-info_link(href="#") Подробнее
-                    li.main-item
-                        .main-img
-                            img(src="/images/main-1.jpg", alt="Цветы")
-                        .main-info
-                            p.main-info_text Discover the women’s ready-to-wear pieces and .
-                            a.main-info_link(href="#") Подробнее
-                    li.main-item
-                        .main-img
-                            img(src="/images/main-1.jpg", alt="Цветы")
-                        .main-info
-                            p.main-info_text Discover the women’s ready-to-wear pieces and .
-                            a.main-info_link(href="#") Подробнее
-                    li.main-item
-                        .main-img
-                            img(src="/images/main-1.jpg", alt="Цветы")
-                        .main-info
-                            p.main-info_text Discover the women’s ready-to-wear pieces and .
-                            a.main-info_link(href="#") Подробнее
-                    li.main-item
-                        .main-img
-                            img(src="/images/main-1.jpg", alt="Цветы")
-                        .main-info
-                            p.main-info_text Discover the women’s ready-to-wear pieces and .
-                            a.main-info_link(href="#") Подробнее
-                    
-            .offer-once
-    .paralax-wrapper
-    .paralax-desc 
-        p.main-title To the moon and back
-        p.main-text Discover the women’s ready-to-wear pieces and<br> accessories from the fall-winter 2018 collection.
-        a.main-look(href="#") Смотреть <span>›</span>        
-    .present-wrapper
-        .container
-            .container-small
-                .present-flower
-                    .photo-big                        
-                    .photo-small
-                    .present-desc
-                        p.main-title To the moon and back
-                        p.main-text Discover the women’s ready-to-wear pieces and<br> accessories from the fall-winter 2018 collection.
-                        a.main-look(href="#") Смотреть <span>›</span> 
-                .present-bouquet
-                    .present-desc
-                        p.main-title To the moon and back
-                        p.main-text Discover the women’s ready-to-wear pieces and<br> accessories from the fall-winter 2018 collection.
-                        a.main-look(href="#") Смотреть <span>›</span>      
-                .catalog-wrapper
-                    ul.catalog-list                    
-                        li.catalog-item
-                            .catalog-picture
-                                img.picture-img(src="/images/flower-big.png")
-                                img.elect(src="/images/star.png")
-                            a.title-link(href="/catalog") Black and White flower
-                            p.catalog-item_text Сhoose a beautiful and comfortable coat
-                            p.catalog-item_price 7 500 рублей
-                            button.more Подробнее
-                        li.catalog-item
-                            .catalog-picture
-                                img.picture-img(src="/images/flower-big.png")
-                                img.elect(src="/images/star.png")
-                            a.title-link(href="/catalog") Black and White flower
-                            p.catalog-item_text Сhoose a beautiful and comfortable coat
-                            p.catalog-item_price 7 500 рублей
-                            button.more Подробнее
-                        li.catalog-item
-                            .catalog-picture
-                                img.picture-img(src="/images/flower-big.png")
-                                img.elect(src="/images/star.png")
-                            a.title-link(href="/catalog") Black and White flower
-                            p.catalog-item_text Сhoose a beautiful and comfortable coat
-                            p.catalog-item_price 7 500 рублей
-                            button.more Подробнее
-                .history
-                    .shop
-                        img(src="/images/shop.png")
-                    p.history-text Букет из лизиантуса, эвкалипта и английских пионовидных роз David Austin Patience назван так не спроста! Он не только красив как до луны и обратно, но, и собран согласно последним флористическим трендами - в раскидистой технике в форме полумесяца. Букет из лизиантуса, эвкалипта и английских пионовидных роз David Austin Patience назван так не спроста! Он не только красив как до луны и обратно, но, и собран согласно последним флористическим трендами - в раскидистой технике в форме полумесяца. Букет из лизиантуса, эвкалипта и английских пионовидных роз David Austin Patience назван так не спроста! Он не только красив как до луны и обратно, но, и собран согласно последним флористическим трендами - в раскидистой технике в форме полумесяца.
-                .advantages
-                    h3.advantages-title Наши преимущества
-                    ul.advantages-list
-                        li.advantages-item
-                            img(src="/images/advant1.jpg")
-                            p.advantages-text Бесплатная доставка
-                        li.advantages-item
-                            img(src="/images/advant2.jpg")
-                            p.advantages-text Фотоконтроль
-                        li.advantages-item
-                            img(src="/images/advant3.jpg")
-                            p.advantages-text Стильная упаковка
-                .bouquet-slider
+            .supply
+                .left-block
+                    .main-img                        
+                        .text-block
+                            p.main-title To the moon and back
+                            p.main-text Discover the women’s ready-to-wear pieces and<br> accessories from the fall-winter 2018 collection.
+                            a.main-look(href="#") Смотреть <span>›</span>
+                    .secondary
+                        .secondary-img
+                            .text-block
+                                p.main-title To the moon and back
+                                p.main-text Discover the women’s ready-to-wear pieces and<br> accessories from the fall-winter 2018 collection.
+                                a.main-look(href="#") Смотреть <span>›</span>
+                        .secondary-img
+                            .text-block
+                                p.main-title To the moon and back
+                                p.main-text Discover the women’s ready-to-wear pieces and<br> accessories from the fall-winter 2018 collection.
+                                a.main-look(href="#") Смотреть <span>›</span>
+                .right-block
                     .bouquet-slider_title
                         img.logo-img(src="/images/logo.svg", alt="Логотип Raccoon Flowers")
                         span Pop
+                    ul.unit
+                        li.unit-item
+                            .flower-img
+                            .desc-text
+                                p.main-title To the moon and back
+                                p.flower-price <span>7 500</span> рублей
+                                p.main-text Discover the women’s ready-to-wear pieces and accessories from the fall-winter 2018 collection.
+                                a.main-look(href="#") Смотреть <span>›</span>
+                        li.unit-item
+                            .flower-img
+                            .desc-text
+                                p.main-title To the moon and back
+                                p.flower-price <span>7 500</span> рублей
+                                p.main-text Discover the women’s ready-to-wear pieces and accessories from the fall-winter 2018 collection.
+                                a.main-look(href="#") Смотреть <span>›</span>
+                        li.unit-item
+                            .flower-img
+                            .desc-text
+                                p.main-title To the moon and back
+                                p.flower-price <span>7 500</span> рублей
+                                p.main-text Discover the women’s ready-to-wear pieces and accessories from the fall-winter 2018 collection.
+                                a.main-look(href="#") Смотреть <span>›</span>
+                        li.unit-item
+                            .flower-img
+                            .desc-text
+                                p.main-title To the moon and back
+                                p.flower-price <span>7 500</span> рублей
+                                p.main-text Discover the women’s ready-to-wear pieces and accessories from the fall-winter 2018 collection.
+                                a.main-look(href="#") Смотреть <span>›</span>
+                        li.unit-item
+                            .flower-img
+                            .desc-text
+                                p.main-title To the moon and back
+                                p.flower-price <span>7 500</span> рублей
+                                p.main-text Discover the women’s ready-to-wear pieces and accessories from the fall-winter 2018 collection.
+                                a.main-look(href="#") Смотреть <span>›</span>
+                        li.unit-item
+                            .flower-img
+                            .desc-text
+                                p.main-title To the moon and back
+                                p.flower-price <span>7 500</span> рублей
+                                p.main-text Discover the women’s ready-to-wear pieces and accessories from the fall-winter 2018 collection.
+                                a.main-look(href="#") Смотреть <span>›</span>
+                        li.unit-item
+                            .flower-img
+                            .desc-text
+                                p.main-title To the moon and back
+                                p.flower-price <span>7 500</span> рублей
+                                p.main-text Discover the women’s ready-to-wear pieces and accessories from the fall-winter 2018 collection.
+                                a.main-look(href="#") Смотреть <span>›</span>
+    .advantages-wrap
+        .container
+            .advantages
+                .advantages_item
+                    img(src="/images/bag.png", alt="Картинка")
+                    .advantages_block
+                        h4.advantages_title To the moon and back
+                        p.advantages_text Discover the women’s ready-to-wear pieces and accessories from the fall-winter 2018 collection. Discover the women’s ready-to-wear pieces and
+                .advantages_item
+                    img(src="/images/bag.png", alt="Картинка")
+                    .advantages_block
+                        h4.advantages_title To the moon and back
+                        p.advantages_text Discover the women’s ready-to-wear pieces and accessories from the fall-winter 2018 collection. Discover the women’s ready-to-wear pieces and
+                .advantages_item
+                    img(src="/images/bag.png", alt="Картинка")
+                    .advantages_block
+                        h4.advantages_title To the moon and back
+                        p.advantages_text Discover the women’s ready-to-wear pieces and accessories from the fall-winter 2018 collection. Discover the women’s ready-to-wear pieces and
+    .present-wrapper
+        .container
+            .container-small
+                .bouquet-slider
+                    .bouquet-slider_title
+                        img.logo-img(src="/images/logo.svg", alt="Логотип Raccoon Flowers")
                     .owl-carousel.owl-theme.bouquet-slider_wrapp
                         .bouquet-slider_item
                             p.flower-title TO THE MOON AND BACK
