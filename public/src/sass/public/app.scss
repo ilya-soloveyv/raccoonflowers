@@ -12,7 +12,7 @@
 
 
 // Color
-$m-color: #CFBC9E;
+$m-color: #B9A689;
 $grey: #707070;
 
 // Mixin
@@ -26,7 +26,7 @@ $grey: #707070;
 // Specification
 
 body {
-    font-family: 'Gill Sans';
+    font-family: 'NotoSans';
     font-size: 12px;
     margin: 0;
     padding: 0;
@@ -197,7 +197,7 @@ button, button:hover, button:focus, button:active {
                 font-family: 'Baskerville';
                 font-size: 17px;
             }
-            font-family: 'Helvetica Neue';
+            font-family: 'NotoSans';
             font-size: 12px;
             margin-bottom: 50px;
             @media screen and (max-width: 576px) {
@@ -256,6 +256,9 @@ button, button:hover, button:focus, button:active {
     @media screen and (max-width:992px) {
         padding: 30px 0 20px;
     }
+    @media screen and (max-width:576px) {
+        padding: 10px 0 5px;
+    }
 }
 
 .search {
@@ -265,15 +268,22 @@ button, button:hover, button:focus, button:active {
     }
     width: 10%;    
     &-block {
-        padding: 25px 0;
+        padding: 18px 0;
         border-bottom: 1px solid #D3D3D3;
         text-align: center;
-        display: none;
+        display: none;        
         @media screen and (max-width:992px) {
             order: 1;
             border-bottom: none;
             text-align: left;
-            display: block;                
+            display: block;
+            background: #EAE7E7;                
+        }        
+        @media screen and (max-width:768px) {
+            padding: 8px 0;                
+        }        
+        @media screen and (max-width:576px) {
+            padding: 5px 0;                
         }        
     }
     &-wrapp {
@@ -289,16 +299,20 @@ button, button:hover, button:focus, button:active {
                 display: inline-block;
                 cursor: pointer;                   
             }
+            @media screen and (max-width:576px) {
+                transform: scale(0.7);                   
+            }
         }
     }    
     &-field {
         width: 70%;
-        padding: 20px 30px;
+        padding: 13px 30px;
         border: none;
         border-top: 1px solid #D3D3D3;
         border-bottom: 1px solid #D3D3D3;
         text-align: center;
         color: $m-color;
+        background: transparent;
         @include placeholder {
             color: #D3D3D3;
             text-transform: uppercase;
@@ -307,6 +321,10 @@ button, button:hover, button:focus, button:active {
         @media screen and (max-width:992px) {
             margin-left: 9%;
             display: none;                          
+        }      
+        @media screen and (max-width:768px) {
+            padding: 8px 30px;
+            font-size: 11px;                        
         }      
     }    
     &-icon-input {
@@ -327,24 +345,40 @@ button, button:hover, button:focus, button:active {
     }
 }
 
+.sale {
+    background: #B9A687;
+    padding: 3px 0;
+    text-align: center;
+    font-size: 11px;
+    color: #fff;
+    span {
+        text-transform: uppercase;
+    }
+}
+
 .top-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;  
+    display: flex;    
+    align-items: center;
+    position: relative;  
 }
 
 .burger {
     display: none;
     @media screen and (max-width:992px) {
-        display: block;
-        width: 10%;
+        display: block;       
     }
-    @media screen and (max-width:576px) {
-        width: 20%;
-    }
+    &-icon {        
+        @media screen and (max-width:576px) {
+            transform: scale(0.7)
+        }
+    }    
 }
 
 .logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
     &-img {
         max-height: 55px;
         width: 100%;
@@ -357,34 +391,49 @@ button, button:hover, button:focus, button:active {
     }
 }
 
+.top-phone {
+    color: $m-color;
+    font-size: 14px;
+    @media screen and (max-width:992px) {
+        display: none;
+    }
+}
+
+
+
 .inter {
     display: flex;
     align-items: center;
+    margin-left: auto;
     @media screen and (max-width:992px) {
-        justify-content: space-between;
-        width: 10%;
+        justify-content: space-between;        
     }
-    @media screen and (max-width:576px) {
-        width: 20%;
-    }   
-    .sign-wrapp {
-        margin: 0 15px;
-        @media screen and (max-width:992px) {
+    .star {
+        @media screen and (max-width:576px) {
             display: none;
+        } 
+    }    
+    .sign {
+        margin: 0 15px;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-family: 'NotoSans';
+        @media screen and (max-width:576px) {
+            font-size: 11px;
+            margin: 0;            
         }
-        .cabinet {
-            font-family: 'Helvetica Neue';
-            font-size: 12px;
-            text-transform: uppercase;
+        span {
+            font-size: 22px;
+            font-family: 'Baskerville';
+            @media screen and (max-width:576px) {
+                font-size: 18px;
+            }
         }
-        .sign-link {
-            font-family: 'Helvetica';
-            font-size: 9px;
+        &__link {
             color: $m-color;
         }
-    }
-    img {
-        margin-top: -15px;
+    }  
+    img {        
         cursor: pointer;
     }
 }
@@ -477,12 +526,39 @@ button, button:hover, button:focus, button:active {
         display: flex;
         flex-direction: column;
     }
+    &-head-info {
+        padding: 14px;
+        padding-left: 45px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #D3D3D3;
+        @media screen and (max-width:992px) {
+            padding-left: 10px;          
+        }
+        @media screen and (max-width:576px) {
+            flex-direction: column;
+            order: 1;
+            padding-left: 0;
+            padding: 35px 0;      
+        }
+        .social-link {
+            color: $m-color;
+        }
+        i {
+            font-size: 22px;
+        }
+    }
     &-main-info {
         padding: 25px 0;
+        padding-left: 55px;
         border-top: 1px solid #D3D3D3;
         border-bottom: 1px solid #D3D3D3;
         display: flex;
         align-items: center;
+        @media screen and (max-width:992px) {
+            padding-left: 20px;          
+        }      
         @media screen and (max-width:576px) {
             flex-direction: column;
             justify-content: center;
@@ -490,12 +566,17 @@ button, button:hover, button:focus, button:active {
             border-bottom: none;
             border-top: none;
             padding-top: 15px;
-            padding-bottom: 45px;            
+            padding-bottom: 45px; 
+            padding-left: 0;           
         }      
         
     }
     .messenger {
-        margin: 0 24px 0 50px;
+        margin: 0 24px 0 0;
+        margin-left: 50px;
+        @media screen and (max-width:992px) {
+            margin-left: auto;
+        }
         @media screen and (max-width:768px) {
             margin: 0 5px 0 20px;
         }
@@ -506,9 +587,18 @@ button, button:hover, button:focus, button:active {
     }
     &-phone {
         font-size: 13px;
-        color: #707070;
+        color: $m-color;
         @media screen and (max-width:576px) {
             margin-top: 10px;
+        }
+        &:nth-of-type(2) {
+            margin-left: 193px;
+            @media screen and (max-width:992px) {
+                margin-left: auto;
+            }
+            @media screen and (max-width:576px) {
+                margin-left: 0;
+            }
         }
     }
     &-social {
@@ -516,36 +606,48 @@ button, button:hover, button:focus, button:active {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-left: 363px;
+        margin-left: auto;
         @media screen and (max-width:1200px) {
             margin-left: auto;
         }
         @media screen and (max-width:576px) {
             margin-left: 0;
             margin-top: 20px;
-            flex-direction: column;
-        }
-        &_link {
-            @media screen and (max-width:576px) {
-                margin-top: 10px;
-            }
-        }
+            width: 230px;
+        }        
     }
     &-all-info {
         padding-top: 43px;
         padding-bottom: 72px;
+        padding-left: 55px;
         border-bottom: 1px solid #D3D3D3;
         display: flex;
         justify-content: space-between;
         @media screen and (max-width:992px) {
-            flex-direction: column;
+            
             padding-bottom: 40px;
+            padding-left: 20px;
         }
         @media screen and (max-width:576px) {
             padding-bottom: 10px;
             order: 1;
             border-bottom: none;
             padding-top: 0;
+            padding-left: 0;
+        }
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-weight: bold;
+            @media screen and (max-width:768px) {
+                display: none;
+            }
+            p:nth-child(2) {
+                @media screen and (max-width:992px) {
+                    display: none;
+                }
+            }
         }
     }
     &-info-text {
@@ -556,7 +658,10 @@ button, button:hover, button:focus, button:active {
             width: 55%;
         }
         @media screen and (max-width:992px) {
-            width: 90%;
+            width: 70%;
+        }
+        @media screen and (max-width:768px) {
+            width: 100%;
         }
         @media screen and (max-width:576px) {
             flex-direction: column;
@@ -570,19 +675,16 @@ button, button:hover, button:focus, button:active {
                 border-bottom:1px solid $m-color;
                 width: 100%;
                 text-align: center;
+                cursor: pointer;
             }
-            &:first-child {
-                @media screen and (max-width:576px) {
-                    display: none;
-                }
-            }
+            
         }
     }
     .title-info {
         font-size: 11px;
         color: $m-color;
         text-transform: uppercase;
-        font-weight: normal;
+        font-weight: bold;
         margin-bottom: 40px;
         @media screen and (max-width:576px) {
             margin-bottom: 0;
@@ -606,8 +708,20 @@ button, button:hover, button:focus, button:active {
         }
     }
     .subscribe {
+        width: 40%;
+        display: flex;
+        @media screen and (max-width:1200px) {
+            width: 50%;
+        }
+        @media screen and (max-width:992px) {
+            width: 60%;
+        }
+        @media screen and (max-width:768px) {
+            width: 70%;
+        }
         @media screen and (max-width:576px) {
-            display: none;
+            width: 100%;
+            margin-top: 35px;
         }
         .title-info {
             @media screen and (max-width:992px) {
@@ -618,41 +732,47 @@ button, button:hover, button:focus, button:active {
             }
         }        
         input {
-            border: none;
-            padding: 15px 0;
+            border: 1px solid #F0F0F0;
+            border-right: none;
+            padding: 10px 0;
             padding-left: 25px;
-            width: 265px;
-            @media screen and (max-width:1200px) {
-                width: 190px;
-                padding-left: 10px;
-            }
-            @media screen and (max-width:992px) {
-                width: 70%;
-            }
+            width: auto;
+            flex-grow: 1;
+            @media screen and (max-width:576px) {
+                padding-left: 5px;
+            }           
         }
         &-send {
-            padding: 15px 25px;
-            background: $m-color;
+            padding: 10px 25px;
+            background: #F0F0F0;
             border: none;
             text-transform: uppercase;
-            border: 1px solid $m-color;
+            border: 1px solid #F0F0F0;
             color: #fff;
             cursor: pointer;
-            transition: all .3s;
-            @media screen and (max-width:1200px) {
-                padding: 13px 20px;
-            }
-            @media screen and (max-width:992px) {
-                width: 25%;
-                margin-left: 5%;
-            }
+            transition: all .3s;           
             &:hover {
-                color: $m-color;
+                color: #F0F0F0;
                 background: #fff;
+            }
+            @media screen and (max-width:576px) {
+                padding: 10px 5px;
             }
         }        
     }    
-    &-logo {
+    &-logo {        
+        display: none;        
+        @media screen and (max-width:576px) {            
+            padding: 40px 0 40px;
+            display: block;
+            order:5;
+            border-top:1px solid #D3D3D3;        
+        }
+        .logo-img {
+            max-height: 45px;
+        }
+    }
+    &-logo-racc {
         padding-top: 50px;
         padding-bottom: 85px;
         @media screen and (max-width:768px) {
@@ -660,14 +780,35 @@ button, button:hover, button:focus, button:active {
         }
         @media screen and (max-width:576px) {
             order:0;
-            padding: 40px 0 40px;          
+            padding: 40px 0 40px;                   
         }
         .logo-img {
-            max-height: 45px;
+            max-height: 85px;
         }
     }
 }
 
+// Fonttelo
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before { content: '\f09a'; } /* '' */
+.icon-instagram:before { content: '\f16d'; } /* '' */
 
 // POP UP Catalog
 
@@ -714,7 +855,7 @@ button, button:hover, button:focus, button:active {
                 font-family: 'Baskerville';
                 font-size: 17px;
             }
-            font-family: 'Helvetica Neue';
+            font-family: 'NotoSans';
             font-size: 12px;
             margin-bottom: 50px;
             @media screen and (max-width: 576px) {
@@ -796,7 +937,8 @@ button, button:hover, button:focus, button:active {
     width: 100%;
     height: 100vh;
     z-index: 999999;
-    background: #fff;    
+    background: #fff; 
+    display: none;   
     img {
         display: block;
         position: absolute;

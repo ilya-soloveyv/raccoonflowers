@@ -28,47 +28,34 @@ block main
                 p.flower-title TO THE MOON AND BACK
                 p.flower-text Сhoose a beautiful and comfortable coat
                 p.flower-price <span>7 500</span> рублей
-            .product-description
-                .slider-desc
-                    img.star-img(src="/images/star.png" alt="вперед")
-                    ul.dots
-                        li
-                            button.active
-                        li
-                            button
-                        li
-                            button
-                    .size-block
-                        span.size-text Размер:               
+                .slider-desc                    
+                    .size-block                                       
                         input(type="radio", id="s-size", name="size-product" checked)
                         label(for="s-size" class="size-check") S
-                        span.slide-size
-                            input(type="radio", id="m-size", name="size-product")
-                            label(for="m-size" class="size-check label-size-none") M
-                            input(type="radio", id="l-size", name="size-product")
-                            label(for="l-size" class="size-check label-size-none") L
-                            input(type="radio", id="xl-size", name="size-product")
-                            label(for="xl-size" class="size-check label-size-none") XL
-                p.box-size Размер коробки <span class="box-size_choise">S</span>: <span class="box-size_number">23 x 26 см</span>
-                .more-info_mobile
-                    p.composition-bouquet Состав букета:
-                    ul.composition-bouquet-list
-                        li.composition-bouquet-item 11 английских пионовидных роз David Austin,
-                        li.composition-bouquet-item 10 стеблей лизиантуса (на каждой по 3-6 бутонов),
-                        li.composition-bouquet-item 10 веток эвкалипта
+                        input(type="radio", id="m-size", name="size-product")
+                        label(for="m-size" class="size-check label-size-none") M
+                        input(type="radio", id="l-size", name="size-product")
+                        label(for="l-size" class="size-check label-size-none") L
+                        input(type="radio", id="xl-size", name="size-product")
+                        label(for="xl-size" class="size-check label-size-none") XL
+            .product-description                
+                .tabs
+                    ul.tabs__caption
+                        li.active DESCRIPTION
+                        li SHIPPING
+                        li PAYMENT
+                    .tabs__content.active
+                        p The finest anemones and ranunculus in intensive ruby and cherry red color tones arranged with blue thistle make ‘Il Rubino’ a beautiful and sophisticated gift. The flowers will arrive in bud, ready to bloom and show off their full beauty. ‘Il Rubino’ comes in our Signature PANAMY 12oz refined canvas gift-bag with satin ribbon.
+                        span Код продукта: 106 455
+                    .tabs__content
+                        p The finest anemones and ranunculus in intensive ruby and cherry red color tones arranged with blue thistle make ‘Il Rubino’ a beautiful and sophisticated gift. The flowers will arrive in bud, ready to bloom and show off their full beauty. ‘Il Rubino’ comes in our Signature PANAMY 12oz refined canvas gift-bag with satin ribbon.
+                        span Код продукта: 108 999
+                    .tabs__content
+                        p The finest anemones and ranunculus in intensive ruby and cherry red color tones arranged with blue thistle make ‘Il Rubino’ a beautiful and sophisticated gift. The flowers will arrive in bud, ready to bloom and show off their full beauty. ‘Il Rubino’ comes in our Signature PANAMY 12oz refined canvas gift-bag with satin ribbon.
+                        span Код продукта: 107 888
                 .btn-wrapp
                     a.move-order.btn-order(href="#") Сделать заказ
                     a.buy-order.btn-order(href="#") Купить в 1 клик
-                .more-info
-                    p.more-title О букете
-                    p.desc-text Букет из лизиантуса, эвкалипта и английских пионовидных роз David Austin Patience назван так не спроста! Он не только красив как до луны и обратно, но, и собран согласно последним флористическим трендами - в раскидистой технике в форме полумесяца.
-                .more-info
-                    p.more-title Доставка
-                .product-more-info
-                    p.ident-product Код продукта: <span class="ident-number">106 454</span>
-                    a.phone-order(href="tel:88007778877")
-                        img(src="/images/phone-order.png" alt=" телефон") 
-                        span 8 (800) 777 88 77
         .clear            
         .buytoo
             p.buytoo-title Также вам может понравиться
