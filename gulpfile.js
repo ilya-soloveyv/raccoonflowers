@@ -31,8 +31,8 @@ gulp.task('js_min', () => {
     return gulp
         .src([
             'node_modules/jquery/dist/jquery.min.js',
+            'public/src/js/public/datepicker.min.js',
             'public/src/js/public/jquery.nicescroll.min.js',
-            'public/src/js/public/mobiscroll.jquery.min.js',
             'public/src/js/public/owl.carousel.min.js',
             'public/src/js/public/app.js'
         ], { allowEmpty: true })
@@ -53,7 +53,7 @@ gulp.task('js_min', () => {
 gulp.task('css_min', () => {
     return gulp
         .src([            
-            'public/src/css_static/mobiscroll.jquery.min.css',
+            'public/src/css_static/datepicker.min.css',
             'public/src/css_static/owl.carousel.min.css',
             'public/src/css_static/owl.theme.default.min.css',
             'public/src/css/public/app.css'
